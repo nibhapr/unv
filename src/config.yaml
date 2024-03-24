@@ -1,5 +1,5 @@
 site:
-  name: saakshi
+  name: Digital Link
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false

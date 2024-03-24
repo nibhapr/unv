@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import MenuItem from "./MenuItem";
 import type { MenuLink } from "../widgets/Header.astro";
 const MenuList = ({links}: {links: Array<MenuLink>}) => {
   return (
@@ -9,6 +8,7 @@ const MenuList = ({links}: {links: Array<MenuLink>}) => {
     >
       {links.map(({ text, href }, idx) => (
         <motion.li
+        key={idx}
         initial={{scale: 0.8, opacity: 0}}
         whileInView={{scale: 1, opacity: 1}}
         transition={{delay: 0.06 * idx}}

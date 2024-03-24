@@ -1,13 +1,38 @@
 ---
-import Hero from '~/components/Hero';
-import Layout from '../layouts/Layout.astro';
-import Header from '~/components/widgets/Header.astro';
-import { headerData } from '~/navigation';
+import Hero from "~/components/Hero";
+import Layout from "../layouts/Layout.astro";
+import Header from "~/components/widgets/Header.astro";
+import { headerData } from "~/navigation";
+import FeaturesNavs from "../components/features/FeaturesNavs.astro";
+import Feature from "~/components/Feature";
+const data = [
+  {
+    icon: "mdi:tailwind",
+    title: "Tailwind",
+    body: "Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.",
+  },
+  {
+    icon: "mdi:react",
+    title: "React",
+    body: "Build interactive user interfaces with React, a JavaScript library for building user interfaces.",
+  },
+  {
+    icon: "mdi:vuejs",
+    title: "Vue.js",
+    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+  }
+];
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<Header client:load {...headerData}  isSticky showRssFeed showToggleTheme />
-		<Hero client:load />
-	</main>
+  <main>
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+    <Hero client:load />
+    <FeaturesNavs />
+    <div class="max-w-6xl px-32 mx-auto py-32 bg-slate-700">
+		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+			{data.map((e) => <Feature client:load title={e.title} body={e.body} icon={e.icon} />)}
+		</div>
+	</div>
+  </main>
 </Layout>
