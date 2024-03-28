@@ -1,0 +1,64 @@
+<div class='hidden sm:flex absolute inset-0 -z-50'>
+	<div id='icons' class='relative [&>svg]:p-4 [&>svg]:w-21 [&>svg]:h-21 [&>svg]:fill-current [&>svg]:opacity-0 [&>svg]:absolute h-full'>
+
+		
+	
+		<svg width="300" height="300" viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="50" fill="red" />
+			<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">UNV</text>
+		  </svg>
+		  <!-- <svg width="200" height="200" viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="50" fill="red" />
+			<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">BOSCH</text>
+		  </svg>
+		  <svg width="200" height="200" viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="50" fill="red" />
+			<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">MEGVI</text>
+		  </svg>
+		  <svg width="200" height="200" viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="50" fill="red" />
+			<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">TOSHIBHA</text>
+		  </svg>
+		  <svg width="200" height="200" viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="50" fill="red" />
+			<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">HIKVISION</text>
+		  </svg>
+		  <svg width="200" height="200" viewBox="0 0 100 100">
+			<circle cx="50" cy="50" r="50" fill="red" />
+			<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">DAHUA</text>
+		  </svg> -->
+
+		
+		
+	</div>
+</div>
+
+<script type='module'>
+	const hero = document.getElementById('icons')
+	const svgs = Array.from(hero.querySelectorAll('svg'))
+	const w = window.innerWidth
+	const h = window.innerHeight - 300
+	function animateBackgroundIcons() {
+		const availableSvgs = svgs.filter((svg) => !svg.isAnimating)
+		const svgToAnimate = availableSvgs[Math.floor(Math.random() * availableSvgs.length)]
+		if (!svgToAnimate) return
+		svgToAnimate.addEventListener(
+			'animationend',
+			() => {
+				svgToAnimate.classList.remove('animate-moving-background')
+				svgToAnimate.removeAttribute('style')
+				svgToAnimate.isAnimating = false
+			},
+			{ once: true }
+		)
+		svgToAnimate.setAttribute(
+			'style',
+			`top: ${Math.floor(Math.random() * h)}px;
+				left: ${Math.floor(Math.random() * w)}px;`
+		)
+		svgToAnimate.classList.add('animate-moving-background')
+		svgToAnimate.isAnimating = true
+	}
+	setInterval(animateBackgroundIcons, 1000)
+	animateBackgroundIcons()
+</script>

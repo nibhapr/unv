@@ -2,6 +2,8 @@
 import Hero from "~/components/Hero";
 import Layout from "../layouts/Layout.astro";
 import Header from "~/components/widgets/Header.astro";
+import Slider from "~/components/Slider";
+
 import { headerData } from "~/navigation";
 import FeaturesNavs from "../components/features/FeaturesNavs.astro";
 import Feature from "~/components/Feature";
@@ -20,7 +22,33 @@ const data = [
     icon: "mdi:vuejs",
     title: "Vue.js",
     body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+  },
+  {
+    icon: "mdi:vuejs",
+    title: "Vue.js",
+    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+  },
+  {
+    icon: "mdi:vuejs",
+    title: "Vue.js",
+    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+  },
+  {
+    icon: "mdi:vuejs",
+    title: "Vue.js",
+    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+  },
+  {
+    icon: "mdi:vuejs",
+    title: "Vue.js",
+    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+  },
+  {
+    icon: "mdi:vuejs",
+    title: "Vue.js",
+    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
   }
+  
 ];
 ---
 
@@ -29,10 +57,17 @@ const data = [
     <Header {...headerData} isSticky showRssFeed showToggleTheme />
     <Hero client:load />
     <FeaturesNavs />
-    <div class="max-w-6xl px-32 mx-auto py-32 bg-slate-700">
-		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+   
+    <div class="max-w-screen-7xl px-8 sm:px-32 mx-auto py-32 bg-white">
+		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 			{data.map((e) => <Feature client:load title={e.title} body={e.body} icon={e.icon} />)}
 		</div>
-	</div>
+  </div>
+	
+    <Slider client:load/>
+ 
+ 
+
   </main>
 </Layout>
+~/navigation2~/navigation
