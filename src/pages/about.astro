@@ -1,11 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
+import { headerData } from '~/navigation';
+import Header from '~/components/widgets/Header.astro';
 ---
 
 <Layout title="About">
 	<main>
-		About Page
+		<Header {...headerData} isSticky showRssFeed showToggleTheme />
+    <Hero client:load />
+	  About Page
 	</main>
 </Layout>
 

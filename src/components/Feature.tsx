@@ -8,7 +8,9 @@ const Feature = ({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>
+    
       <div className="flex flex-col relative cursor-pointer">
+        
         <motion.div
           animate={{ margin: isHovered ? '0px' : '8px' }}
           transition={{duration: 0.3}}

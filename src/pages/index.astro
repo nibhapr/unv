@@ -3,52 +3,85 @@ import Hero from "~/components/Hero";
 import Layout from "../layouts/Layout.astro";
 import Header from "~/components/widgets/Header.astro";
 import Slider from "~/components/Slider";
-
 import { headerData } from "~/navigation";
 import FeaturesNavs from "../components/features/FeaturesNavs.astro";
 import Feature from "~/components/Feature";
+import TestimonialsSection from "~/components/TestimonialsSection.astro";
 const data = [
   {
     icon: "mdi:tailwind",
-    title: "Tailwind",
-    body: "Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.",
+    title: "seamless Integration:",
+    body: "Digital Link Technology seamlessly integrates various data, audio, and video signals over a single cable, eliminating the need for multiple cables and connectors. This streamlined approach simplifies installation processes and reduces clutter, resulting in cost savings and enhanced aesthetics.",
   },
-  {
+    {
     icon: "mdi:react",
-    title: "React",
-    body: "Build interactive user interfaces with React, a JavaScript library for building user interfaces.",
+    title: "High Bandwidth Capacity",
+    body: "With ever-increasing data requirements, Digital Link Technology boasts high bandwidth capacity, ensuring smooth transmission of large volumes of data without compromising on quality. Whether it's streaming high-definition video or transferring massive files, Digital Link Technology delivers unparalleled performance and reliability",
   },
   {
     icon: "mdi:vuejs",
-    title: "Vue.js",
-    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+    title: " Versatility and Flexibility",
+    body: "One of the standout features of Digital Link Technology is its versatility and flexibility. Compatible with a wide range of devices and applications, including cameras, displays, projectors, and more, it offers endless possibilities for connectivity and collaboration across various environments and industries.",
   },
   {
     icon: "mdi:vuejs",
-    title: "Vue.js",
-    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+    title: "Future-Proof Investment",
+    body: "Investing in Digital Link Technology is a future-proof decision that ensures compatibility with emerging technologies and standards. With its ability to support high-resolution formats, including 4K and beyond, as well as advanced audio formats such as Dolby Atmos, Digital Link Technology offers a scalable solution that adapts to evolving industry trends and requirements",
   },
   {
     icon: "mdi:vuejs",
-    title: "Vue.js",
-    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+    title: "Enhanced Reliability and Durability",
+    body: "Built to withstand the rigors of professional installations, Digital Link Technology offers enhanced reliability and durability, even in challenging environments. With robust connectors and cables designed for long-term performance, you can trust Digital Link Technology to deliver consistent results day in and day out",
   },
   {
     icon: "mdi:vuejs",
-    title: "Vue.js",
-    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+    title: "Simplified Maintenance and Troubleshooting",
+    body: "Digital Link Technology simplifies maintenance and troubleshooting processes, thanks to its standardized protocols and diagnostics capabilities. With remote monitoring and management features, administrators can easily identify and address issues, minimizing downtime and maximizing productivity",
   },
   {
     icon: "mdi:vuejs",
-    title: "Vue.js",
-    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+    title: "Authorized Service Partner for UNV Cameras",
+    body: "At Digital Link Technology, we take pride in being an authorized service partner for UNV cameras, the industry leader in surveillance technology. Our partnership with UNV signifies our commitment to delivering exceptional service and support to customers who rely on UNV cameras for their security needs.",
   },
   {
     icon: "mdi:vuejs",
-    title: "Vue.js",
-    body: "Vue.js is a progressive JavaScript framework for building interactive web interfaces.",
+    title: "Expertise and Certification",
+    body: "As an authorized service partner, we have undergone rigorous training and certification programs directly from UNV. Our team of technicians possesses in-depth knowledge and expertise in servicing UNV cameras, ensuring that your devices are in capable hands.",
   }
   
+];
+
+const testimonials = [
+  // First testimonial data
+  {
+    content:
+      " \"Since switching to ScrewFast's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
+    author: "Jason Clark",
+    role: "Site Foreman | TopBuild",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Second testimonial data
+  {
+    content:
+      " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
+    author: "Maria Gonzalez",
+    role: "Interior Designer | Creative Spaces",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
+  // Third testimonial data
+  {
+    content:
+      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
+    author: "Richard Kim",
+    role: "Master Carpenter | WoodWright",
+    avatarSrc:
+      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+    avatarAlt: "Image Description",
+  },
 ];
 ---
 
@@ -59,15 +92,31 @@ const data = [
     <FeaturesNavs />
    
     <div class="max-w-screen-7xl px-8 sm:px-32 mx-auto py-32 bg-white">
+      <div class="mb-6 w-full  sm:mb-10 md:mb-16  text-center">
+        <h2
+          class="text-balance text-2xl  font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
+        >
+          Why Digital Link Technology?
+        </h2>
+      </div>
 		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 			{data.map((e) => <Feature client:load title={e.title} body={e.body} icon={e.icon} />)}
 		</div>
   </div>
-	
+  <TestimonialsSection
+  title="What Our Customers Say"
+  testimonials={testimonials}
+/>
+<div class="mb-6 w-full  sm:mb-10 md:mb-16  text-center">
+  <h2
+    class="text-balance text-2xl  font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
+  >
+  Awards and Recognition
+  </h2>
+</div>
     <Slider client:load/>
  
  
 
   </main>
 </Layout>
-~/navigation2~/navigation
