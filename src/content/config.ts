@@ -82,8 +82,30 @@ const insightsCollection = defineCollection({
   }),
 });
 
+const testimonialCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) => z.object ({
+    id: z.number(),
+    content: z.string(),
+    author: z.string(),
+    role: z.string(),
+    avatarSrc: image(),
+    avatarAlt: z.string(),
+  }),
+});
+const featureCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) => z.object ({
+    id: z.number(),
+    title: z.string(),
+    body: z.string(),    
+  }),
+});
+
 export const collections = {
   'products': productsCollection,
   'blog': blogCollection,
   'insights': insightsCollection,
+  'testimonials': testimonialCollection,
+  'feature' : featureCollection
 };

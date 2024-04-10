@@ -1,15 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
+
 import { headerData } from '~/navigation';
 import Header from '~/components/widgets/Header.astro';
+import MapContainer from '../components/GoogleMap';
 ---
 
 <Layout title="About">
 	<main>
-		<Header {...headerData} isSticky showRssFeed showToggleTheme />
+	<Header {...headerData} isSticky showRssFeed showToggleTheme />
     <Hero client:load />
+	<MapContainer APIKEY='AIzaSyCieCaQ_bWMpJ46a6l-4Ck_NWVhNtNieAk'  client:load />
 	  About Page
 	</main>
 </Layout>
 
+../components/GoogleMap2../components/GoogleMap2
