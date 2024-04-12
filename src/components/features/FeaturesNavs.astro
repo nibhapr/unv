@@ -6,7 +6,7 @@ import construction from '~/assets/images/digitallink.jpg';
 import dashboard from '~/assets/images/dashboard-image.avif';
 
 
-// Define the variable for the section's heading
+
 const title: string = `Welcome to<span class="text-yellow-500 ml-2 dark:text-yellow-400">Digital Link Technology L.L.C</span> Your Premier Destination for UNV Cameras in Dubai`;
 ---
 
@@ -19,10 +19,8 @@ const title: string = `Welcome to<span class="text-yellow-500 ml-2 dark:text-yel
     >
       <!-- Section's heading and tab navigation -->
       <div class="mb-10 lg:order-2 lg:col-span-6 lg:col-start-8 lg:mb-0">
-        <h2
-          class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl"
-        >
-          <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
+        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+          
           <Fragment set:html={title} />
         </h2>
         <!-- Tab navigation - use the attribute 'first' in the first TabNav for the component to work -->
@@ -90,7 +88,7 @@ const title: string = `Welcome to<span class="text-yellow-500 ml-2 dark:text-yel
 
       <!-- Contents for each tab - the 'first' attribute should be used in the first tab for that tab to be initially visible, 'second' changes the styles -->
       <div class="lg:col-span-6">
-        <div class="relative">
+        <div class="relative h-64 sm:h-80 lg:h-full">
           <div>
             <TabContent
               id="tabs-with-card-1"
@@ -117,15 +115,11 @@ const title: string = `Welcome to<span class="text-yellow-500 ml-2 dark:text-yel
       </div>
     </div>
 
-    <div class="absolute inset-0 grid h-full w-full grid-cols-12">
-      <!-- Decorative background and sizing -->
-      <div
-        class="col-span-full h-5/6 w-full rounded-xl bg-neutral-100 dark:bg-white/[.075] sm:h-3/4 lg:col-span-7 lg:col-start-6 lg:h-full"
-      >
-      </div>
+<div class="absolute inset-0 grid h-full w-full grid-cols-12">
+    <div class="col-span-full h-5/6 w-full rounded-xl bg-neutral-100 dark:bg-white/[.075] sm:h-3/4 lg:col-span-7 lg:col-start-6 lg:h-full">
+</div>
     </div>
   </div>
 </section>
-<!--Import the necessary Tabs plugin-->
-<!--https://preline.co/plugins/html/tabs.html-->
+
 <script is:inline src="/scripts/vendor/preline/tabs/index.js"></script>

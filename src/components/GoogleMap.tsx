@@ -1,4 +1,4 @@
-import { GoogleMap, Marker, LoadScriptNext } from "@react-google-maps/api";
+import { GoogleMap, Marker, LoadScriptNext ,InfoWindow} from "@react-google-maps/api";
 
 const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
   const mapStyles = {
@@ -21,8 +21,17 @@ const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
       onLoad={() => console.log("Google Maps API loaded")}
       loadingElement={<div>Loading...</div>}
     >
-      <GoogleMap mapContainerStyle={mapStyles} zoom={21} center={placeCoordinates}>
-        <Marker position={placeCoordinates} />
+      <GoogleMap mapContainerStyle={mapStyles} zoom={15} center={placeCoordinates}>
+       
+        <InfoWindow position={placeCoordinates}>
+        
+        <div>
+          <h4 style= {{color:"blue",fontWeight:"bold",fontSize:"18px"}}>Digital Link Technology</h4>
+          <p style = {{color:"blue", fontWeight: "bold"}}>UNV National Distributor in DUBAI,U.A.E</p>
+          <p style = {{color: "blue"}}>Mobile: +971555529469 </p>
+        </div>
+
+        </InfoWindow>
       </GoogleMap>
     </LoadScriptNext>
   );

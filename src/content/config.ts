@@ -101,11 +101,25 @@ const featureCollection = defineCollection({
     body: z.string(),    
   }),
 });
+const teamCollection = defineCollection({
+  type: "content",
+  schema: ({image}) => z.object({
+    draft: z.boolean(),
+    name: z.string(),
+    title: z.string(),
+    avatar: z.object({
+      src: image(),
+      alt: z.string(),
+    }),
+    publishDate: z.string().transform(str => new Date(str)),
+  }),
+});
 
 export const collections = {
   'products': productsCollection,
   'blog': blogCollection,
   'insights': insightsCollection,
   'testimonials': testimonialCollection,
-  'feature' : featureCollection
+  'feature' : featureCollection,
+  'teams'  : teamCollection
 };

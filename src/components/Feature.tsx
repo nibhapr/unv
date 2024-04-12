@@ -8,7 +8,7 @@ const Feature = ({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>
-    
+   
       <div className="flex flex-col relative cursor-pointer">
         
         <motion.div

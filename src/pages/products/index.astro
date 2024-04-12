@@ -9,8 +9,6 @@ import FeaturesStatsAlt from "~/components/features/FeaturesStatsAlt.astro";
 // Importing necessary functions from Astro
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import Header from '~/components/widgets/Header.astro';
-import { headerData } from '~/navigation';
 
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
@@ -31,7 +29,6 @@ const subTitle: string =
 
 <Layout title="Products | ScrewFast">
 
-  <Header {...headerData} isSticky showRssFeed showToggleTheme />
   <div class="mt-8 w-full  sm:mb-10 md:mb-16  text-center">
     <h2
       class="text-balance text-2xl   font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"

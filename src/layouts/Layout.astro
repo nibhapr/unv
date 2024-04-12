@@ -1,57 +1,54 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
-import '~/assets/styles/tailwind.css';
-import Unvdigi from "~/components/Unvdigi.astro";
+import "~/assets/styles/tailwind.css";
 import { SEO } from "astro-seo";
-import CustomStyles from '~/components/CustomStyles.astro';
-import FooterSection from '~/components/FooterSection.astro';
+import FooterSection from "~/components/FooterSection.astro";
+import { headerData } from "~/navigation";
+import Header from "~/components/widgets/Header.astro";
 const { title } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
-	<head>
-		<!-- <meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<CustomStyles />
-		<title>{title}</title> -->
-		<SEO
-		title="UNV Authorized distributor in U.A.E"
-		description="unv distributor,Hikvision dealer,Dahua distributor"
-		openGraph={{
-		  basic: {
-			title: "UNV Authorized distributor in U.A.E",
-			type: "A type.",
-			image: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
-		  }
-		}}
-		twitter={{
-		  creator: "@jonasmerlins1"
-		}}
-		extend={{
-		  // extending the default link tags
-		  link: [{ rel: "icon", href: "/favicon.svg" }],
-		  // extending the default meta tags
-		  meta: [
-			{
-			  name: "twitter:image",
-			  content: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
-			},
-			{ name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
-			{ name: "twitter:description", content: "Agent" },
-		  ],
-		}}
-	  />
-	</head>
-	<body>
-		
-		<slot />
-		<Unvdigi />
-		<FooterSection />
-	</body>
+  <head>
+    <SEO
+      title="UNV Authorized distributor in U.A.E"
+      description="unv distributor,Hikvision dealer,Dahua distributor"
+      openGraph={{
+        basic: {
+          title: "UNV Authorized distributor in U.A.E",
+          type: "A type.",
+          image:
+            "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+        },
+      }}
+      twitter={{
+        creator: "@jonasmerlins1",
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.svg" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content:
+              "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+          },
+          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
+    />
+  </head>
+  <body>
+    <Header {...headerData} isSticky isFullWidth showRssFeed showToggleTheme />
+    <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+      <main>
+        <slot />
+      </main>
+    </div>
+    <FooterSection />
+  </body>
 </html>

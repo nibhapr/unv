@@ -1,98 +1,43 @@
 ---
 import Hero from "~/components/Hero";
 import Layout from "../layouts/Layout.astro";
-import Header from "~/components/widgets/Header.astro";
 import Slider from "~/components/Slider";
-import { headerData } from "~/navigation";
 import FeaturesNavs from "../components/features/FeaturesNavs.astro";
 import Feature from "~/components/Feature";
 import TestimonialsSection from "~/components/TestimonialsSection.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import TitleComponents from "~/components/TitleComponents.astro";
 
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
 ).sort(
   (a: CollectionEntry<"testimonials">, b: CollectionEntry<"testimonials">) =>
-    a.data.id - b.data.id,
+    a.data.id - b.data.id
 );
 const feature: CollectionEntry<"feature">[] = (
   await getCollection("feature")
 ).sort(
   (a: CollectionEntry<"feature">, b: CollectionEntry<"feature">) =>
-    a.data.id - b.data.id,
+    a.data.id - b.data.id
 );
-// const data = [
-//   {
-//     icon: "mdi:tailwind",
-//     title: "seamless Integration:",
-//     body: "Digital Link Technology seamlessly integrates various data, audio, and video signals over a single cable, eliminating the need for multiple cables and connectors. This streamlined approach simplifies installation processes and reduces clutter, resulting in cost savings and enhanced aesthetics.",
-//   },
-//     {
-//     icon: "mdi:react",
-//     title: "High Bandwidth Capacity",
-//     body: "With ever-increasing data requirements, Digital Link Technology boasts high bandwidth capacity, ensuring smooth transmission of large volumes of data without compromising on quality. Whether it's streaming high-definition video or transferring massive files, Digital Link Technology delivers unparalleled performance and reliability",
-//   },
-//   {
-//     icon: "mdi:vuejs",
-//     title: " Versatility and Flexibility",
-//     body: "One of the standout features of Digital Link Technology is its versatility and flexibility. Compatible with a wide range of devices and applications, including cameras, displays, projectors, and more, it offers endless possibilities for connectivity and collaboration across various environments and industries.",
-//   },
-//   {
-//     icon: "mdi:vuejs",
-//     title: "Future-Proof Investment",
-//     body: "Investing in Digital Link Technology is a future-proof decision that ensures compatibility with emerging technologies and standards. With its ability to support high-resolution formats, including 4K and beyond, as well as advanced audio formats such as Dolby Atmos, Digital Link Technology offers a scalable solution that adapts to evolving industry trends and requirements",
-//   },
-//   {
-//     icon: "mdi:vuejs",
-//     title: "Enhanced Reliability and Durability",
-//     body: "Built to withstand the rigors of professional installations, Digital Link Technology offers enhanced reliability and durability, even in challenging environments. With robust connectors and cables designed for long-term performance, you can trust Digital Link Technology to deliver consistent results day in and day out",
-//   },
-//   {
-//     icon: "mdi:vuejs",
-//     title: "Simplified Maintenance and Troubleshooting",
-//     body: "Digital Link Technology simplifies maintenance and troubleshooting processes, thanks to its standardized protocols and diagnostics capabilities. With remote monitoring and management features, administrators can easily identify and address issues, minimizing downtime and maximizing productivity",
-//   },
-//   {
-//     icon: "mdi:vuejs",
-//     title: "Authorized Service Partner for UNV Cameras",
-//     body: "At Digital Link Technology, we take pride in being an authorized service partner for UNV cameras, the industry leader in surveillance technology. Our partnership with UNV signifies our commitment to delivering exceptional service and support to customers who rely on UNV cameras for their security needs.",
-//   },
-//   {
-//     icon: "mdi:vuejs",
-//     title: "Expertise and Certification",
-//     body: "As an authorized service partner, we have undergone rigorous training and certification programs directly from UNV. Our team of technicians possesses in-depth knowledge and expertise in servicing UNV cameras, ensuring that your devices are in capable hands.",
-//   }
-  
-// ];
-
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <Header {...headerData} isSticky showRssFeed showToggleTheme />
-    <Hero client:load />
-    <FeaturesNavs />
-   
-    <div class="max-w-screen-7xl px-8 sm:px-32 mx-auto py-32 bg-white">
-      <div class="mb-6 w-full  sm:mb-10 md:mb-16  text-center">
-    <h2 class="text-balance text-2xl  font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
-          Why Digital Link Technology?
-    </h2>
-      </div>
-		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-			{feature.map((e) => <Feature client:load title={e.data.title} body={e.data.body} />)}
-		</div>
+<Layout title="Welcome to Digital Link Technology.">
+  <Hero client:load />
+  <FeaturesNavs />
+  <TitleComponents title="Why Digital Link Technology?" />
+  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+    {
+      feature.map((e) => (
+        <Feature client:load title={e.data.title} body={e.data.body} />
+      ))
+    }
   </div>
-<TestimonialsSection
-  title="What Our Customers Say"
-  testimonials={testimonials}
-/>
-<div class="mb-6 w-full  sm:mb-10 md:mb-16  text-center">
-<h2 class="text-balance text-2xl  font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
-  Awards and Recognition
-</h2>
-</div>
-<Slider client:load/>
- </main>
+  <TestimonialsSection
+    title="What Our Customers Say"
+    testimonials={testimonials}
+  />
+  <TitleComponents title="Awards and Recognition" />
+  <Slider client:load />
 </Layout>

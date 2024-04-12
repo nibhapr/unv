@@ -6,8 +6,6 @@ import PrimaryCTA from "~/components/ui/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Product from "~/components/product";
-import { headerData } from "~/navigation";
-import Header from "~/components/widgets/Header.astro";
 
 
 // Global declaration for gsap animation library
@@ -30,7 +28,6 @@ const { product } = Astro.props;
 ---
 
 <Layout title={product.data.main.title + " |Digital Link Technology"}>
-  <Header {...headerData} isSticky showRssFeed showToggleTheme /> 
   <!-- <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
   </div> -->
  

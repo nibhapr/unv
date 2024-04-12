@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 type Product = CollectionEntry<"products">;
 const product = ({ product }: { product: Product }) => {
   return (
-    <section className="mx-auto flex max-w-6xl flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <section className="mx-auto overflow-clip flex max-w-6xl flex-col px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
       <motion.div initial={{x: '-100%', animation: "ease-in-out"}} animate={{ x: 0 }} transition={{ duration: 1 }}>
         <p className="mb-8 max-w-prose text-pretty font-light text-neutral-700 dark:text-neutral-300 sm:text-xl">
           {product.data.main.content}

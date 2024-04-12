@@ -1,12 +1,8 @@
 ---
 import Layout from '~/layouts/Layout.astro';
-import Hero from '~/components/Hero';
 import CardBlog from "~/components/blogs/CardBlog.astro";
-import { headerData } from '~/navigation';
-import Header from '~/components/widgets/Header.astro';
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import CardBlogRecent from '~/components/blogs/CardBlogRecent.astro';
 import CardInsight from '~/components/blogs/CardInsight.astro';
 
 const blogPosts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
@@ -32,34 +28,25 @@ const secondSubTitle: string =
 
 <Layout title="Blog">
 	<main>
-		<Header {...headerData} isSticky showRssFeed showToggleTheme />
-    <!-- <Hero client:load /> -->
-    <section
-    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
-  >
+		
+    <!-- <Hero client:load />  -->
+  <section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full">
     <!--Page header-->
-    <div class="mx-auto max-w-3xl text-left sm:text-center">
-      <h1
-        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
-      >
+  <div class="mx-auto max-w-3xl text-left sm:text-center">
+  <h1 class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">
         {title}
-      </h1>
-
-      <p
-        class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
-      >
-        {subTitle}
-      </p>
-    </div>
+  </h1>
+  <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400">
+    {subTitle}
+  </p>
+  </div>
   </section>
 
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
     <!--Blog posts grid-->
-    <div class="grid gap-6 lg:grid-cols-2">
+  <div class="grid gap-6 lg:grid-cols-2">
       {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
-    </div>
+  </div>
   </section>
   <!--Most recent blog post-->
   <!-- <section
@@ -68,9 +55,7 @@ const secondSubTitle: string =
     <CardBlogRecent blogEntry={mostRecentPost} />
   </section> -->
   <!--Insights section-->
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
       <h2
         class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
