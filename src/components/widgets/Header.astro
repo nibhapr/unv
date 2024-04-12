@@ -49,10 +49,10 @@ const {
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 ---
 
-<header 
+<header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
-    "top-0 z-40 flex-none mx-auto w-full rounded border-b bg-red-400 sm:bg-gray-200 border-gray-50/0 transition-[opacity] ease-in-out",
+    "top-0 z-40 flex-none mx-auto w-full rounded border-b bg-gray-200 border-gray-50/0 transition-[opacity] ease-in-out",
   ]}
   {...isSticky ? { "data-aw-sticky-header": true } : {}}
   {...id ? { id } : {}}
@@ -60,7 +60,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between"
+      "relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between",
     ]}
   >
     <div
@@ -76,8 +76,41 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         <ToggleMenu />
       </div>
     </div>
+    <div
+      id="navbar-collapse-with-animation"
+      class="md:hidden overflow-hidden hidden hs-collapse transition-all duration-400"
+    >
+      {
+        links.map(({ text, href, links }) => (
+          <div class={links?.length ? "dropdown" : ""}>
+            {links?.length ? (
+              <>
+                <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
+                  {text}{" "}
+                  <Icon
+                    name="tabler:chevron-down"
+                    class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                  />
+                </button>
+                <MenuList links={links} client:load />
+              </>
+            ) : (
+              <a
+                class:list={[
+                  "hover:text-link dark:hover:text-white px-4 py-3 flex items-centers",
+                  { "aw-link-active": href === currentPath },
+                ]}
+                href={href}
+              >
+                {text}
+              </a>
+            )}
+          </div>
+        ))
+      }
+    </div>
     <nav
-      class="items-center w-full md:w-auto  hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
+      class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
       aria-label="Main navigation"
     >
       <ul
@@ -126,17 +159,6 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />
             )
           }
-          {
-            showRssFeed && (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label="RSS Feed"
-                href={getAsset("/rss.xml")}
-              >
-                <Icon name="tabler:rss" class="w-5 h-5" />
-              </a>
-            )
-          }
         </div>
         {
           actions?.length ? (
@@ -156,3 +178,5 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+<script is:inline src="/scripts/vendor/preline/collapse/index.js"></script>
+<script is:inline src="/scripts/vendor/preline/overlay/index.js"></script>

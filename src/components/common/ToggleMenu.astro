@@ -5,9 +5,9 @@ export interface Props {
 }
 
 const {
-  label = 'Toggle Menu',
+  label = 'Toggle navigation',
   class:
-    className = "flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group",
+    className = "hs-collapse-toggle flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group",
 } = Astro.props;
 ---
 
@@ -15,6 +15,8 @@ const {
   class={className}
   aria-label={label}
   data-aw-toggle-menu
+  data-hs-collapse="#navbar-collapse-with-animation"
+          aria-controls="navbar-collapse-with-animation"
 >
   <span class="sr-only">{label}</span>
   <slot>
