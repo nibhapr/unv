@@ -1,7 +1,7 @@
 ---
 title: "The Impact of Sustainable Practices"
 description: "Discover how ScrewFast is leading the charge in promoting sustainability within the construction industry"
-cardImage: "../../assets/images/insights/dome.jpeg"
+cardImage: "../../assets/images/dahua.jpg"
 cardImageAlt: "Top view mechanical tools arrangement"
 contents: [
         "With growing concerns about climate change and environmental sustainability, the construction industry is facing increasing pressure to adopt more eco-friendly practices. At ScrewFast, we're committed to doing our part to minimize our environmental footprint and promote sustainability in everything we do.",

@@ -1,13 +1,16 @@
 ---
-title: "The Impact of Sustainable Practices"
-description: "Discover how ScrewFast is leading the charge in promoting sustainability within the construction industry"
+title: "8mp hd intelligent color hunter fixed eye ball network camera"
+description: "Experience the forefront of surveillance technology with the 8MP HD Intelligent Color Hunter Fixed Eye Ball Network Camera from UNV. Engineered with precision and innovation, this camera delivers unmatched clarity, intelligence, and reliability for all your security needs"
 cardImage: "../../assets/images/insights/dome.jpeg"
 cardImageAlt: "Top view mechanical tools arrangement"
 contents: [
-        "With growing concerns about climate change and environmental sustainability, the construction industry is facing increasing pressure to adopt more eco-friendly practices. At ScrewFast, we're committed to doing our part to minimize our environmental footprint and promote sustainability in everything we do.",
-        "One way we're addressing this is through our selection of materials and manufacturing processes. We prioritize sustainable materials and practices whenever possible, ensuring that our products are not only durable and reliable but also environmentally friendly.",
-        "Additionally, we're exploring innovative solutions for reducing waste and conserving resources on construction sites. From modular construction techniques to recycling and repurposing materials, we're constantly seeking ways to minimize our impact on the planet.",
-        "But perhaps most importantly, we're committed to raising awareness about the importance of sustainability in the construction industry. Through education and advocacy, we're working to inspire change and encourage others to join us in building a more sustainable future.",
-        "By embracing sustainable practices, we're not only protecting the planet for future generations but also creating healthier, more resilient communities for everyone."
+"High quality image with 8MP, 1/2.7 CMOS sensor",
+"The dewarp level can be configured in the range of 1-9",
+"Ultra 265, H.265, H.264, MJPEG",
+"120dB true WDR technology enables clear image in strong light scene",
+"Auto Scene Match (ASM)（Only WDR）",
+"Built-in Mic",
+"Smart IR, up to 20m (66ft) IR distance",
+"IK10 vandal resistant"
 ]
 ---

@@ -1,8 +1,8 @@
 ---
 id: 2
-content: "As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top"
+content: "Digital Link Technology has been our trusted partner for all our security system needs. Their professionalism, expertise, and dedication to customer satisfaction are unparalleled. From helping us choose the right products to providing seamless installation and support, they have consistently exceeded our expectations. I highly recommend Digital Link Technology to anyone in need of top-notch security solutions."
 author: "pramod"
-role:    "Developer"
+role:    "Security Analyst"
 avatarSrc:  "../../assets/images/testimonial/digiimpact.avif"
 avatarAlt: "digital link technology"
 ---

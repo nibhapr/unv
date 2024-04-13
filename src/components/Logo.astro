@@ -1,8 +1,10 @@
 ---
 import { SITE } from '~/utils/config';
+import logo from '../assets/images/dg.png';
+import { Image } from 'astro:assets'
 
 ---
 
 <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-  🚀 {SITE?.name}
+  <Image src={logo} alt="Your Logo" width="97" height="87" />
 </span>

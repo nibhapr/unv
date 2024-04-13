@@ -1,9 +1,9 @@
 ---
 draft: false
-name: "Janette Lynch"
-title: "Senior Director"
+name: "Mohammed Rasi"
+title: "Accountant"
 avatar: {
-    src: "../../assets/images/gafoor2.jpeg",
+    src: "../../assets/images/Rasi.png",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"

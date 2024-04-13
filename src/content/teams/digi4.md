@@ -1,9 +1,9 @@
 ---
 draft: false
-name: "Janette Lynch"
-title: "Senior Director"
+name: "Thashreef CK"
+title: "Chief Sales Officer"
 avatar: {
-    src: "../../assets/images/gafoor.jpeg",
+    src: "../../assets/images/Thasreef.png",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"

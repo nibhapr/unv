@@ -1,13 +1,16 @@
 ---
-title: "The Impact of Sustainable Practices"
-description: "Discover how ScrewFast is leading the charge in promoting sustainability within the construction industry"
-cardImage: "../../assets/images/insights/dome.jpeg"
+title: "5MP Fixed IR Bullet Analog Camera"
+description: "Step into a world of enhanced security with the 5MP Fixed IR Bullet Analog Camera from UNV. Crafted with precision engineering and innovative features, this camera provides reliable surveillance coverage with crystal-clear imaging, day or night."
+cardImage: "../../assets/images/digi2.jpg"
 cardImageAlt: "Top view mechanical tools arrangement"
 contents: [
-        "With growing concerns about climate change and environmental sustainability, the construction industry is facing increasing pressure to adopt more eco-friendly practices. At ScrewFast, we're committed to doing our part to minimize our environmental footprint and promote sustainability in everything we do.",
-        "One way we're addressing this is through our selection of materials and manufacturing processes. We prioritize sustainable materials and practices whenever possible, ensuring that our products are not only durable and reliable but also environmentally friendly.",
-        "Additionally, we're exploring innovative solutions for reducing waste and conserving resources on construction sites. From modular construction techniques to recycling and repurposing materials, we're constantly seeking ways to minimize our impact on the planet.",
-        "But perhaps most importantly, we're committed to raising awareness about the importance of sustainability in the construction industry. Through education and advocacy, we're working to inspire change and encourage others to join us in building a more sustainable future.",
-        "By embracing sustainable practices, we're not only protecting the planet for future generations but also creating healthier, more resilient communities for everyone."
+ "5MP high quality image",
+"TVI/AHD/CVI/CVBS",
+"Supports IR-cut filter with auto-switch (ICR)",
+"Supports 180° horizontal flip, 180° vertical flip",
+"OSD configuration menu, easy to operate",
+"IP67 waterproof and dustproof design, high reliability",
+"OSD configuration menu in 11 languages",
+"Built-in microphone for high quality audio transmission via coaxial cables"
 ]
 ---

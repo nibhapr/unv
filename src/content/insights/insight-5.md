@@ -1,13 +1,16 @@
 ---
-title: "The Impact of Sustainable Practices"
-description: "Discover how ScrewFast is leading the charge in promoting sustainability within the construction industry"
-cardImage: "../../assets/images/insights/dome.jpeg"
+title: "5MP ColourHunter Fixed Turret Analog Camera"
+description: "Experience a new standard in surveillance clarity with the 5MP ColorHunter Fixed Turret Analog Camera from UNV. Engineered with precision optics and advanced imaging technology, this camera delivers vivid, true-to-life color imagery for unparalleled monitoring accuracy."
+cardImage: "../../assets/images/digi7.jpg"
 cardImageAlt: "Top view mechanical tools arrangement"
 contents: [
-        "With growing concerns about climate change and environmental sustainability, the construction industry is facing increasing pressure to adopt more eco-friendly practices. At ScrewFast, we're committed to doing our part to minimize our environmental footprint and promote sustainability in everything we do.",
-        "One way we're addressing this is through our selection of materials and manufacturing processes. We prioritize sustainable materials and practices whenever possible, ensuring that our products are not only durable and reliable but also environmentally friendly.",
-        "Additionally, we're exploring innovative solutions for reducing waste and conserving resources on construction sites. From modular construction techniques to recycling and repurposing materials, we're constantly seeking ways to minimize our impact on the planet.",
-        "But perhaps most importantly, we're committed to raising awareness about the importance of sustainability in the construction industry. Through education and advocacy, we're working to inspire change and encourage others to join us in building a more sustainable future.",
-        "By embracing sustainable practices, we're not only protecting the planet for future generations but also creating healthier, more resilient communities for everyone."
+        " 5MP high quality image",
+"TVI/AHD/CVI/CVBS",
+"Supports white light illumination, 24/7 color images",
+"Supports 180° horizontal flip, 180° vertical flip",
+"OSD configuration menu, easy to operate",
+"IP67 waterproof and dustproof design, high reliability",
+"OSD configuration menu in 11 languages",
+"Built-in microphone for high quality audio transmission via coaxial cables"
 ]
 ---

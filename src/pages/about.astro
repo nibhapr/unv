@@ -628,7 +628,12 @@ const publishedTeamMembers = await getCollection("teams", ({ data }) => {
                         </svg>
                      </span>
                   </div>
-                  <div class= "text-center mb-8">Abdul Gafoor CEO & FOUNDER</div>
+                  <div class= "text-center mb-8">
+                     <p>Abdul Gafoor</p>
+                     <p>CEO & CO-FOUNDER</p>
+
+                  </div>
+                  
                </div>
             </div>
          </div>
@@ -676,9 +681,9 @@ const publishedTeamMembers = await getCollection("teams", ({ data }) => {
           </div>
           <h4
               class="text-xl font-semibold text-gray-900 mb-2 capitalize text-center transition-all duration-500 group-hover:text-indigo-600">
-              Antonio Roberto </h4>
+            {teamMemberEntry.data.name} </h4>
           <span
-              class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">Founder</span>
+              class="text-gray-500 text-center block transition-all duration-500 group-hover:text-gray-900">{teamMemberEntry.data.title}</span>
       </div>
  
       ))

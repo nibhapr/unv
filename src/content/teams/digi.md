@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "Janette Lynch"
-title: "Senior Director"
+name: "Mashhod M.K"
+title: "Chief Operating Officer"
 avatar: {
-    src: "../../assets/images/gafoor.jpeg",
-    alt: "Janette Lynch"
+    src: "../../assets/images/Mashood-1.png",
+    alt: "Mashsood Digital link"
 }
 publishDate: "2022-11-07 15:39"
 ---

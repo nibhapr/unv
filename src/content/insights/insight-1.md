@@ -1,12 +1,17 @@
 ---
-title: "The Future of Construction Technology"
-description: "Explore ScrewFast's pioneering role in revolutionizing construction through advanced technology and innovative solutions."
+title: "4K HD Intelligent color hunter"
+description: "Experience the pinnacle of surveillance technology with the 4K HD Intelligent Color Hunter UNV Camera. Engineered to deliver unparalleled clarity, precision, and reliability, this cutting-edge camera redefines what's possible in video surveillance."
 cardImage: "../../assets/images/insights/uni.jpeg"
 cardImageAlt: "Top view mechanical tools arrangement"
 contents: [
-        "As technology continues to evolve, so too does the construction industry. From advanced robotics to augmented reality, the possibilities for innovation are endless. At ScrewFast, we're at the forefront of this technological revolution, developing cutting-edge tools and solutions to drive the industry forward.",
-        "Our range of hardware tools combines precision engineering with user-centric design, ensuring maximum productivity on every job site. From power drills to advanced fastening solutions, ScrewFast's tools are built to withstand the rigors of construction while streamlining your workflow.",
-        "Another area of focus for us is in data analytics. By harnessing the power of data, we're able to provide valuable insights into project performance, resource utilization, and more. This allows our clients to make informed decisions that optimize efficiency and drive success.",
-        "Looking ahead, we see even greater opportunities for innovation in areas like sustainable construction and modular design. By embracing new technologies and pushing the boundaries of what's possible, ScrewFast is committed to shaping the future of the construction industry for the better."
+        "High quality image with 8MP,1/1.8CMOS sensor",
+"3840*2160@30fps in the main stream",
+"Ultra 265, H.265, H.264, MJPEG",
+"Smart intrusion prevention, support false alarm filtering, include Cross Line, Intrusion, Enter Area, Leave Area detection",
+"LightHunter technology ensures ultra-high image quality in low illumination environment",
+"Up to 120 dB Optical WDR (Wide Dynamic Range)",
+"Audio 1 in and 1 out, Alarm 2 in and 1 out",
+"Smart IR, up to 100m(328ft) IR distance",
+
 ]
 ---

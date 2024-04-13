@@ -1,8 +1,8 @@
 ---
 title: "Why Choose Uniview Cameras for Your Business Security Needs"
 description: "Quality security solution for lasting results"
-author: "Shahid"
-authorImage: "../../assets/images/blogs/brad.avif"
+author: "Shajid"
+authorImage: "../../assets/images/shajid.png"
 authorImageAlt: "Avatar Description"
 pubDate: 2024-02-10
 cardImage: "../../assets/images/blogs/Uniview.avif"
