@@ -114,11 +114,8 @@ export const footerData = {
       title: 'Product',
       links: [
         { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
+        { text: 'Team', href: 'about' },
+        { text: 'Home', href: '#' },
         { text: 'Resources', href: '#' },
       ],
     },
@@ -145,13 +142,11 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
+        { text: 'About', href: 'about' },
+        { text: 'Blog', href: 'blog' },
         { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'Contact', href: 'contact' },
+        
       ],
     },
   ],

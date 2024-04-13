@@ -3,11 +3,12 @@ import Hero from "~/components/Hero";
 import Layout from "../layouts/Layout.astro";
 import Slider from "~/components/Slider";
 import FeaturesNavs from "../components/features/FeaturesNavs.astro";
-import Feature from "~/components/Feature";
 import TestimonialsSection from "~/components/TestimonialsSection.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import TitleComponents from "~/components/TitleComponents.astro";
+import FeatureComponents from "~/components/FeatureComponents.astro";
+import Sections from "~/components/Sections.astro";
 
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
@@ -15,29 +16,20 @@ const testimonials: CollectionEntry<"testimonials">[] = (
   (a: CollectionEntry<"testimonials">, b: CollectionEntry<"testimonials">) =>
     a.data.id - b.data.id
 );
-const feature: CollectionEntry<"feature">[] = (
-  await getCollection("feature")
-).sort(
-  (a: CollectionEntry<"feature">, b: CollectionEntry<"feature">) =>
-    a.data.id - b.data.id
-);
+
 ---
 
 <Layout title="Welcome to Digital Link Technology.">
-  <Hero client:load />
-  <FeaturesNavs />
-  <TitleComponents title="Why Digital Link Technology?" />
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-    {
-      feature.map((e) => (
-        <Feature client:load title={e.data.title} body={e.data.body} />
-      ))
-    }
-  </div>
-  <TestimonialsSection
+<Sections>
+<Hero client:load />
+<FeaturesNavs />
+<TitleComponents title="Why Digital Link Technology?" />
+<FeatureComponents/>
+<TestimonialsSection
     title="What Our Customers Say"
     testimonials={testimonials}
   />
-  <TitleComponents title="Awards and Recognition" />
-  <Slider client:load />
+<TitleComponents title="Awards and Recognition" />
+<Slider client:load />
+</Sections>
 </Layout>
