@@ -115,12 +115,14 @@ const teamCollection = defineCollection({
     publishDate: z.string().transform(str => new Date(str)),
   }),
 });
-const imageCollection = defineCollection({
+const sliderCollection = defineCollection({
     type: "content",
+    
     schema: ({image}) => z.object({
-    imageAlt:z.string(),
-    imagemain:image(),
-    publishDate: z.string().transform(str => new Date(str)),
+    id: z.number(),
+    slider: z.string(),
+    sliderAlt:z.string(),
+   
   }),
 });
 export const collections = {
@@ -129,6 +131,6 @@ export const collections = {
   'insights': insightsCollection,
   'testimonials': testimonialCollection,
   'feature' : featureCollection,
-  'slider': imageCollection,
+  'slider': sliderCollection,
   'teams'  : teamCollection
 };

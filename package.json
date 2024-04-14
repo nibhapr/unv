@@ -37,6 +37,7 @@
     "react-dom": "^18.2.0",
     "react-floating-whatsapp": "^5.0.8",
     "react-icons": "^5.0.1",
+    "sharp": "^0.33.3",
     "typescript": "^5.4.2",
     "typescript-esbuild": "^0.4.1"
   },
