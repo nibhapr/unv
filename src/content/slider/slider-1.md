@@ -1,5 +1,5 @@
 ---
 id: 1
-slider: "../icons/unvicon.svg"
-sliderAlt:  "seamless Integration:"
+slider: "../slider/6.webp"
+sliderAlt:  "Digital link"
 ---

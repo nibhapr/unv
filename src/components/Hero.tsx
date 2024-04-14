@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+
 const Hero = () => {
   return (
 
@@ -20,7 +21,7 @@ const Hero = () => {
         </div>
         <div className="lg:mt-0 lg:col-span-4 lg:flex mt-8">
         <motion.div whileHover={{ scale: 1.2 }}>
-          <img src="../../src/assets/images/unv.png" alt="mockup" />
+          <img src="../hero/unv.png" alt="mockup" />
         </motion.div>
         </div>
       </div>

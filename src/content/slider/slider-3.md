@@ -1,5 +1,5 @@
 ---
-id: 2
-slider: "../icons/unvicon.svg"
+id: 3
+slider: "../slider/3.webp"
 sliderAlt:  "seamless Integration:"
 ---
