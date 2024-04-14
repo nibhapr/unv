@@ -113,10 +113,10 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Features', href: '#' },
+        { text: 'Features', href: '#contact' },
         { text: 'Team', href: 'about' },
-        { text: 'Home', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Home', href: 'product' },
+        { text: 'Resources', href: 'blog' },
       ],
     },
     // {
@@ -144,7 +144,7 @@ export const footerData = {
       links: [
         { text: 'About', href: 'about' },
         { text: 'Blog', href: 'blog' },
-        { text: 'Careers', href: '#' },
+        // { text: 'Careers', href: '#' },
         { text: 'Contact', href: 'contact' },
         
       ],

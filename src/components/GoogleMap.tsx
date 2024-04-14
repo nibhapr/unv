@@ -2,7 +2,7 @@ import { GoogleMap, Marker, LoadScriptNext ,InfoWindow} from "@react-google-maps
 
 const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
   const mapStyles = {
-    height: "100vh",
+    height: "100%",
     width: "100%",
   };
 

@@ -9,6 +9,7 @@ import type { CollectionEntry } from "astro:content";
 import TitleComponents from "~/components/TitleComponents.astro";
 import FeatureComponents from "~/components/FeatureComponents.astro";
 import Sections from "~/components/Sections.astro";
+import Unvdigi from "~/components/Unvdigi.astro";
 
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
@@ -20,6 +21,7 @@ const testimonials: CollectionEntry<"testimonials">[] = (
 ---
 
 <Layout title="Welcome to Digital Link Technology.">
+<Unvdigi/> 
 <Sections>
 <Hero client:load />
 <FeaturesNavs />

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
+import  gafoor from '../assets/images/gafoor.png';
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
@@ -51,8 +51,7 @@ const publishedTeamMembers = await getCollection("teams", ({ data }) => {
               
                <div class="w-full px-3 sm:px-4 xl:w-full">
                   <div class="relative z-10 my-4">
-                     <img
-                        src="../../src/assets/images/gafoor.png"
+                     <Image src= {gafoor} loading="eager"
                         alt=""
                         class="w-full rounded-2xl"
                         />
@@ -676,6 +675,7 @@ const publishedTeamMembers = await getCollection("teams", ({ data }) => {
           <Image
           src={teamMemberEntry.data.avatar.src}
           alt={teamMemberEntry.data.avatar.alt}
+          loading={'eager'}
           class="w-40 h-40 rounded-full mx-auto transition-all duration-500 object-cover border border-solid border-transparent group-hover:border-indigo-600" 
            />
           </div>
