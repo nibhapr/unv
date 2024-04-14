@@ -8,6 +8,7 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [tailwind({applyBaseStyles: false}), react({experimentalReactChildren: true}), icon({
     include: {
+      mdi: ["*"],
       tabler: ['*'],
       'flat-color-icons': [
         'template',

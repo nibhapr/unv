@@ -1,0 +1,47 @@
+---
+// Importing necessary components
+import Layout from '~/layouts/Layout.astro';
+import CardSmall from "~/components/blogs/CardSmall.astro";
+import CardWide from "~/components/blogs/CardWide.astro";
+import FeaturesStatsAlt from "~/components/features/FeaturesStatsAlt.astro";
+
+
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products")
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id,
+);
+
+// Define variables for page content
+const title: string = "Products";
+const subTitle: string = "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+
+// Testimonial data that will be rendered in the component
+
+---
+
+<Layout title="Products | Digital Link">
+
+
+  <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a href="#">
+        <img class="p-8 rounded-t-lg" src="https://flowbite.com/docs/images/products/apple-watch.png" alt="product image" />
+    </a>
+   
+    <div class="px-5 pb-5">
+        <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+        </a>
+       
+       
+    </div>
+</div>
+
+
+</Layout>

@@ -99,6 +99,7 @@ const featureCollection = defineCollection({
     id: z.number(),
     title: z.string(),
     body: z.string(),    
+    icon: z.string().optional()
   }),
 });
 const teamCollection = defineCollection({

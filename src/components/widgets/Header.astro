@@ -29,7 +29,7 @@ export interface Props {
   isDark?: boolean;
   isFullWidth?: boolean;
   showToggleTheme?: boolean;
-   position?: string;
+  position?: string;
 }
 
 const {
@@ -70,8 +70,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-center md:hidden">
-        
+      <div class="flex items-center gap-x-4 md:hidden">
+        <ThemeIcon />
+        <ToggleMenu />
       </div>
     </div>
     <div
@@ -105,20 +106,18 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             )}
           </div>
         ))
+        
       }
     </div>
-   
+
     <nav
       class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
       aria-label="Main navigation"
     >
-    
       <ul
         class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"
       >
-      
         {
-         
           links.map(({ text, href, links }) => (
             <li class={links?.length ? "dropdown" : ""}>
               {links?.length ? (
@@ -143,16 +142,12 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                   {text}
                 </a>
               )}
-              
             </li>
-            
           ))
         }
-       
       </ul>
-      
     </nav>
-   
+
     <div
       class:list={[
         { "ml-auto rtl:ml-0 rtl:mr-auto": position === "left" },
@@ -162,9 +157,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <div class="items-center flex justify-between w-full md:w-auto">
         <div class="flex">
           <ThemeIcon />
-        
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -211,7 +205,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
       if (dispatchEvent) {
         window.dispatchEvent(
-          new CustomEvent("on-hs-appearance-change", { detail: theme }),
+          new CustomEvent("on-hs-appearance-change", { detail: theme })
         );
       }
     },
@@ -241,10 +235,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
   window.addEventListener("load", () => {
     const $clickableThemes = document.querySelectorAll(
-      "[data-hs-theme-click-value]",
+      "[data-hs-theme-click-value]"
     );
     const $switchableThemes = document.querySelectorAll(
-      "[data-hs-theme-switch]",
+      "[data-hs-theme-switch]"
     );
 
     $clickableThemes.forEach(($item) => {
@@ -252,8 +246,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         HSThemeAppearance.setAppearance(
           $item.getAttribute("data-hs-theme-click-value"),
           true,
-          $item,
-        ),
+          $item
+        )
       );
     });
 
