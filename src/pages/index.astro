@@ -11,6 +11,7 @@ import FeatureComponents from "~/components/FeatureComponents.astro";
 import Sections from "~/components/Sections.astro";
 import Unvdigi from "~/components/Unvdigi.astro";
 import Whatsapp from "~/components/Whatsapp";
+import HeroComponents from "~/components/HeroComponents.astro";
 
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
@@ -24,6 +25,7 @@ const testimonials: CollectionEntry<"testimonials">[] = (
 <Layout title="Welcome to Digital Link Technology.">
 <Unvdigi/> 
 <Sections>
+  <HeroComponents/>
 <Hero client:load />
 <FeaturesNavs />
 <TitleComponents title="Why Digital Link Technology?" />
