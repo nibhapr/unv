@@ -1,11 +1,6 @@
 ---
 import hikvision from '../assets/images/products/hikvision.png';
-import type { CollectionEntry } from "astro:content";
 import { Image } from 'astro:assets'
-const { product } = Astro.props;
-interface Props {
-  product: CollectionEntry<"products">;
-}
 ---
 <div class="">
   <section class="py-2 bg-neutral-800 sm:pb-6 lg:pb-0 xl:pb-4">
@@ -15,15 +10,15 @@ interface Props {
           <p
             class="text-sm font-normal tracking-widest text-gray-300 uppercase"
           >
-            A Hub for Designers, Developers & Marketers
+           Hikvision Authorized Distributor in Dubai
           </p>
           <h1
             class="mt-6 text-4xl font-normal text-white sm:mt-10 sm:text-5xl lg:text-6xl xl:text-8xl"
           >
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
-              >Unlimited Design</span
-            > Inspiration
+              >Authorized Hikvision Distributor </span
+            ><br> in U.A.E
           </h1>
           <p class="max-w-lg mt-4 text-xl font-normal text-gray-400 sm:mt-8">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
@@ -48,7 +43,7 @@ interface Props {
           </div>
 
           <div>
-            <div
+            <!-- <div
               class="inline-flex items-center pt-6 mt-8 border-t border-gray-800 sm:pt-10 sm:mt-14"
             >
               <svg
@@ -84,7 +79,9 @@ interface Props {
               <span class="ml-2 text-base font-normal text-white">
                 42 new design inspiration was added last week
               </span>
-            </div>
+            </div> -->
+
+
           </div>
         </div>
 
@@ -94,7 +91,7 @@ interface Props {
         <!-- <div class="atropos-inner transition-all duration-700 relative p-2 border-0 rounded-md shadow-2xl border-light-blue-dark dark:border-gray-dark bg-gray-light-4 dark:bg-transparent md:backdrop-blur-sm flex flex-col"> -->
 		<!-- <div class="atropos-inner transition-all duration-700 relative py-4 px-2 md:px-8 2xl:px-15 border-0 rounded-md shadow-2xl border-light-blue-dark  bg-gray-light-4 md:backdrop-blur-sm flex flex-col dark:border-gray-dark dark:bg-transparent dark:shadow-orange-dark"> -->
           <Image
-            class="atropos-inner w-full max-w-xs mx-auto mt-32 lg:max-w-sm ml-8 xl:max-w-xl"
+            class="atropos-inner w-full object-center max-w-xs mx-auto mt-32 lg:max-w-sm ml-8 xl:max-w-xl"
             src={hikvision}
             alt=""
           />

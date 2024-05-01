@@ -2,26 +2,7 @@
 // Import AvatarTestimonialSection component for use in this module
 import type { CollectionEntry } from "astro:content";
 import AvatarTestimonial from "~/components/ui/AvatarTestimonial.astro";
-import { getCollection } from "astro:content";
 
-
-// export async function getStaticPaths() {
-//   const testimonials: CollectionEntry<"testimonials">[] = (
-//   await getCollection("testimonials")
-// ).sort(
-//   (a: CollectionEntry<"testimonials">, b: CollectionEntry<"testimonials">) =>
-//     a.data.id - b.data.id,
-// );
-// }
-
-// export async function getStaticPaths() {
-//   const testimonials = await getCollection("testimonials");
-//   return testimonials.map((testimonials) => ({
-//     params: { slug: testimonials.slug },
-//     props: { testimonials },
-    
-//   }));
-// }
 
 // Define props from Astro
 const { title,testimonials } = Astro.props;

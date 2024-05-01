@@ -1,0 +1,25 @@
+---
+import hikvision from '../assets/images/products/hikvision.png';
+import { Image } from 'astro:assets'
+---
+<section class="relative md:py-48 py-40 bg-teal-500/5 dark:bg-teal-500/20" id="home">
+    <div class="container relative mt-8">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 items-center">
+            <div>
+                <h1 class="font-semibold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl mb-5">Get Creative & Modern With Upcover</h1>
+                <p class="text-slate-400 text-lg max-w-xl">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                
+                <div class="mt-6">
+                    <a href="" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white">Contact Us <i class="mdi mdi-chevron-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="lg:ms-8">
+                <div class="relative">
+                    <Image src= {hikvision} class="relative top-16" alt="">
+                    <div class="overflow-hidden absolute md:size-[500px] size-[400px] bg-gradient-to-tl to-teal-500/20 via-teal-500/70 from-teal-500 bottom-1/2 translate-y-1/2 md:start-0 start-1/2 ltr:md:translate-x-0 ltr:-translate-x-1/2 rtl:md:translate-x-0 rtl:translate-x-1/2 -z-1 shadow-md shadow-teal-500/10 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--end section-->

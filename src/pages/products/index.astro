@@ -1,10 +1,9 @@
 ---
 // Importing necessary components
 import Layout from '~/layouts/Layout.astro';
-import CardSmall from "~/components/blogs/CardSmall.astro";
 import ProductCard from '~/components/ProductCard.astro';
-import CardWide from "~/components/blogs/CardWide.astro";
-import FeaturesStatsAlt from "~/components/features/FeaturesStatsAlt.astro";
+
+
 
 
 // Importing necessary functions from Astro
@@ -30,7 +29,7 @@ const subTitle: string =
 
 
 <Layout title="Products | Digital Link">
-  <div class="grid grid-cols-1 w-full gap-4 p-4 lg:grid-cols-4 sm:grid-cols-2 md:gap-6 xl:gap-8">
+<div class="grid grid-cols-1 w-full gap-4 p-4 lg:grid-cols-4 sm:grid-cols-2 md:gap-6 xl:gap-8">
 
     {
       product.map((product, index) => (<ProductCard product={product} />)
