@@ -1,6 +1,6 @@
 ---
 id: 7
-title:  "seamless Integration:"
-body:   "Digital Link Technology seamlessly integrates various data, audio, and video signals over a single cable, eliminating the need for multiple cables and connectors. This streamlined approach simplifies installation processes and reduces clutter, resulting in cost savings and enhanced aesthetics."
+title:  "Best service for UNV camera"
+body:   "UNV cameras offer more than just surveillance—they offer peace of mind. With advanced features like high-definition imaging and remote monitoring capabilities, UNV cameras empower you to stay connected and informed, no matter where you are. Trust UNV for reliable security solutions you can depend on."
 icon: "../icons/unvicon.svg"
 ---

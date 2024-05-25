@@ -9,9 +9,11 @@ import { getCollection } from "astro:content";
 const publishedTeamMembers = await getCollection("teams", ({ data }) => {
    return !data.draft && data.publishDate < new Date();
  });
+
+ const title="UNV Distributor in Dubai|Uniview Camera Dubai|UNV Camera Dubai"
 ---
 
-<Layout title="About">
+<Layout title={title}>
 	
     <!-- <Hero client:load /> -->
 	<section

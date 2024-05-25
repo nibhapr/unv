@@ -1,6 +1,6 @@
 ---
 id: 6
-title:  "seamless Integration:"
-body:   "Digital Link Technology seamlessly integrates various data, audio, and video signals over a single cable, eliminating the need for multiple cables and connectors. This streamlined approach simplifies installation processes and reduces clutter, resulting in cost savings and enhanced aesthetics."
+title:  "UNV camera service center"
+body:   "Elevate your security posture with Dahua CCTV cameras, renowned for their precision and innovation. From high-resolution imaging to intelligent analytics, Dahua cameras offer comprehensive surveillance solutions for any environment. Stay one step ahead of potential threats with Dahua's advanced technology.."
 icon: "../icons/grand.svg"
 ---

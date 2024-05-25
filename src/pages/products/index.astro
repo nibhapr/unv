@@ -1,16 +1,10 @@
 ---
-// Importing necessary components
 import Layout from '~/layouts/Layout.astro';
 import ProductCard from '~/components/ProductCard.astro';
-
-
-
-
-// Importing necessary functions from Astro
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-// Fetching all the product related content and sorting it by main.id
+
 const product: CollectionEntry<"products">[] = (
   await getCollection("products")
 ).sort(
@@ -18,7 +12,7 @@ const product: CollectionEntry<"products">[] = (
     a.data.main.id - b.data.main.id,
 );
 
-// Define variables for page content
+
 const title: string = "Products";
 const subTitle: string =
   "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
@@ -28,13 +22,13 @@ const subTitle: string =
 ---
 
 
-<Layout title="Products | Digital Link">
+<Layout title="UNV Cameras: High-Resolution Surveillance Solutions | Best Prices in the UAE">
 <div class="grid grid-cols-1 w-full gap-4 p-4 lg:grid-cols-4 sm:grid-cols-2 md:gap-6 xl:gap-8">
 
-    {
+  {
       product.map((product, index) => (<ProductCard product={product} />)
    )
-    }
+  }
 
 
   

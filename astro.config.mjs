@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import compress from 'astro-compress';
 import icon from "astro-icon";
+import playformCompress from "@playform/compress";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({applyBaseStyles: false}), react({experimentalReactChildren: true}), icon({
+  site: 'https://unvdubai.com',
+  integrations: [tailwind({applyBaseStyles: false}), sitemap(), react({experimentalReactChildren: true}), icon({
     include: {
       mdi: ["*"],
       tabler: ['*'],
@@ -22,7 +24,7 @@ export default defineConfig({
         'database',
       ],
     },
-  }), compress({
+  }), playformCompress({
     CSS: true,
     HTML: {
       'html-minifier-terser': {
@@ -33,5 +35,7 @@ export default defineConfig({
     JavaScript: true,
     SVG: false,
     Logger: 1,
-  }),],  
+  }),
+
+],  
 });

@@ -1,6 +1,6 @@
 ---
 id: 2
-title:  "seamless Integration:"
-body:   "Digital Link Technology seamlessly integrates various data, audio, and video signals over a single cable, eliminating the need for multiple cables and connectors. This streamlined approach simplifies installation processes and reduces clutter, resulting in cost savings and enhanced aesthetics."
+title:  "UNV camera in Dubai"
+body:   "Step into the future of surveillance with Dahua CCTV cameras. Renowned for their innovation and performance, Dahua cameras deliver crystal-clear images and robust security features. Whether for home or business, trust Dahua to provide comprehensive monitoring solutions tailored to your needs."
 icon: "../icons/dahua.svg"
 ---

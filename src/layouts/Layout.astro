@@ -1,44 +1,79 @@
 ---
-interface Props {
-  title: string;
-}
 import "~/assets/styles/tailwind.css";
 import { SEO } from "astro-seo";
 import FooterSection from "~/components/FooterSection.astro";
 import { headerData } from "~/navigation";
 import Header from "~/components/widgets/Header.astro";
-const { title } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title,description,keywords } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <SEO
-      title="UNV Authorized distributor in U.A.E"
+      title={title ?? "Best UNV Distributor in Dubai, UAE | Digital Link Technology"}
       description="unv distributor,Hikvision dealer,Dahua distributor"
+      canonical={canonicalURL}
       openGraph={{
         basic: {
           title: "UNV Authorized distributor in U.A.E",
           type: "A type.",
           image:
-            "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+            "https://unvdubai.com/digi.png",
         },
       }}
       twitter={{
-        creator: "@jonasmerlins1",
+        card: "summary_large_image",
+        creator: "@@DigitalLink_ca",
+        site: "@DigitalLink_ca",
+        title: title ?? "Best UNV Distributor in Dubai, UAE | Digital Link Technology",
+        image: "https://unvdubai.com/digi.png",
+        imageAlt: "Digital Link Technology U.A.E",
+        description:
+          description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE.",
       }}
       extend={{
-        // extending the default link tags
-        link: [{ rel: "icon", href: "/favicon.svg" }],
-        // extending the default meta tags
+        
+        // link: [{ rel: "icon", href: "/favicon.svg" }],
+       
         meta: [
           {
-            name: "twitter:image",
+            name: "keywords",
             content:
-              "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+              "UNV distributor, Dubai, UAE, surveillance, security" + keywords,
           },
-          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
-          { name: "twitter:description", content: "Agent" },
+          { name: "robots", content: "index, follow" },
+          { name: "language", content: "English" },
+          { name: "Author", content: "Digiimpact" },
+          {
+            name: "organization",
+            content: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Organization",
+              name: "Digital Link Technology Dubai",
+              url: "https://unvdubai.com/",
+              logo: "https://dubai-hikvision.com/logo.jpg",
+              description:
+                "Digital Link Technology is your premier destination for UNV products in Dubai, UAE.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Market, Naif, Deira",
+                addressLocality: "Dubai",
+                addressRegion: "Dubai",
+                postalCode: "123241",
+                addressCountry: "AE",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+971 4 224 1977",
+                contactType: "Sales",
+              },
+            }),
+          },
+          
         ],
       }}
     />

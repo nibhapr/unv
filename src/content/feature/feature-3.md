@@ -1,6 +1,6 @@
 ---
 id: 3
-title:  "seamless Integration:"
-body:   "Digital Link Technology seamlessly integrates various data, audio, and video signals over a single cable, eliminating the need for multiple cables and connectors. This streamlined approach simplifies installation processes and reduces clutter, resulting in cost savings and enhanced aesthetics."
+title:  "Top dealer UNV cameras"
+body:   "At Digital Link Technology, we're more than just a distributor—we're your partner in security. With a comprehensive range of UNV and Dahua CCTV cameras, along with complete security solutions, we offer peace of mind through proactive protection. From installation to ongoing support, count on us for all your security needs."
 icon: "../icons/hikvision.svg"
 ---
