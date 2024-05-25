@@ -4,6 +4,7 @@ import { SEO } from "astro-seo";
 import FooterSection from "~/components/FooterSection.astro";
 import { headerData } from "~/navigation";
 import Header from "~/components/widgets/Header.astro";
+import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title,description,keywords } = Astro.props;
 ---
@@ -13,6 +14,8 @@ const { title,description,keywords } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <GoogleAnalytics />
     <SEO
       title={title ?? "Best UNV Distributor in Dubai, UAE | Digital Link Technology"}
       description="unv distributor,Hikvision dealer,Dahua distributor"
