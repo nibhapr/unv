@@ -1,1 +1,0 @@
-const e="slider-1.md",t="slider",s="slider-1",i="",n={id:1,slider:"../slider/1.webp",sliderAlt:"Digital link"},l={type:"content",filePath:"C:/Users/Milan/Desktop/Work/unv/src/content/slider/slider-1.md",rawData:void 0};export{l as _internal,i as body,t as collection,n as data,e as id,s as slug};

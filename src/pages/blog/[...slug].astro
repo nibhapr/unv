@@ -1,6 +1,6 @@
 ---
 // Import necessary components and utilities
-import MainLayout from "~/layouts/Layout.astro";
+import Layout from "~/layouts/Layout.astro";
 import AvatarBlogLarge from "~/components/ui/AvatarBlogLarge.astro";
 import CardRelated from "~/components/blogs/CardRelated.astro";
 import Bookmark from "~/components/ui/blog/Bookmark.astro";
@@ -27,7 +27,7 @@ const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
 );
 ---
 
-<MainLayout title={post.data.title + " | UNV camera dubai"}>
+<Layout title={post.data.title + " | UNV camera dubai"}>
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
@@ -143,5 +143,5 @@ const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
       {relatedPosts.map((entry) => <CardRelated blogEntry={entry} />)}
     </div>
   </section>
-</MainLayout>
+</Layout>
 

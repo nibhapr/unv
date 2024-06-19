@@ -4,11 +4,15 @@ import react from "@astrojs/react";
 import icon from "astro-icon";
 import playformCompress from "@playform/compress";
 import sitemap from "@astrojs/sitemap";
+import robotsTxt from 'astro-robots-txt';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://unvdubai.com',
-  integrations: [tailwind({applyBaseStyles: false}), sitemap(), react({experimentalReactChildren: true}), icon({
+  integrations: [tailwind({applyBaseStyles: false}), 
+    sitemap(), 
+    robotsTxt(),
+    react({experimentalReactChildren: true}), 
+    icon({
     include: {
       mdi: ["*"],
       tabler: ['*'],
@@ -23,6 +27,7 @@ export default defineConfig({
         'business-contact',
         'database',
       ],
+      
     },
   }), playformCompress({
     CSS: true,

@@ -1,1 +1,0 @@
-const e="slider-4.md",s="slider",t="slider-4",n="",d={id:4,slider:"../slider/4.webp",sliderAlt:"seamless Integration:"},i={type:"content",filePath:"C:/Users/Milan/Desktop/Work/unv/src/content/slider/slider-4.md",rawData:void 0};export{i as _internal,n as body,s as collection,d as data,e as id,t as slug};

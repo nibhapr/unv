@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /~partytown/
-Allow: /
-Sitemap: https://unvdubai.com/sitemap-index.xml

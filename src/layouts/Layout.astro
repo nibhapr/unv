@@ -13,26 +13,33 @@ const { title,description,keywords } = Astro.props;
   <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <GoogleAnalytics />
     <SEO
-      title={title ?? "Best UNV Distributor in Dubai, UAE | Digital Link Technology"}
-      description="unv distributor,Hikvision dealer,Dahua distributor"
+      title={title ?? "UNV Authorized distributor in Dubai,U.A.E"}
+      description={description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE"}
       canonical={canonicalURL}
       openGraph={{
         basic: {
-          title: "UNV Authorized distributor in U.A.E",
-          type: "A type.",
-          image:
-            "https://unvdubai.com/digi.png",
+          title: title ?? "UNV Authorized distributor in Dubai,U.A.E",
+          type: "article",
+          image:"https://unvdubai.com/digi.png",
         },
+        optional:{
+          description: description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE",
+          siteName: "unv distributor in Dubai",
+          locale: "en_Us"
+
+
+        }
       }}
       twitter={{
         card: "summary_large_image",
         creator: "@@DigitalLink_ca",
         site: "@DigitalLink_ca",
-        title: title ?? "Best UNV Distributor in Dubai, UAE | Digital Link Technology",
+        title: title ?? "UNV Authorized distributor in Dubai,U.A.E",
         image: "https://unvdubai.com/digi.png",
         imageAlt: "Digital Link Technology U.A.E",
         description:
@@ -59,8 +66,8 @@ const { title,description,keywords } = Astro.props;
               name: "Digital Link Technology Dubai",
               url: "https://unvdubai.com/",
               logo: "https://dubai-hikvision.com/logo.jpg",
-              description:
-                "Digital Link Technology is your premier destination for UNV products in Dubai, UAE.",
+              description: description ??
+                "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Market, Naif, Deira",

@@ -10,10 +10,11 @@ const publishedTeamMembers = await getCollection("teams", ({ data }) => {
    return !data.draft && data.publishDate < new Date();
  });
 
- const title="UNV Distributor in Dubai|Uniview Camera Dubai|UNV Camera Dubai"
+ const title="UNV Camera distributor in Dubai,U.A.E"
+ const description="Discover Digital Link Technology, your authorized supplier and distributor of UNV camera products in Dubai, Sharjah, and across the UAE"
 ---
 
-<Layout title={title}>
+<Layout title={title},description={description}>
 	
     <!-- <Hero client:load /> -->
 	<section
