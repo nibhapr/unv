@@ -1,20 +1,10 @@
 ---
-// Import section components
 import Layout from "~/layouts/Layout.astro";
 import ProductTabBtn from "~/components/ui/ProductTabBtn.astro";
 import PrimaryCTA from "~/components/ui/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Product from "~/components/product";
-
-
-// Global declaration for gsap animation library
-// declare global {
-//   interface Window {
-//     gsap: any;
-//   }
-// }
-// This gets the static paths for all the unique products
 export async function getStaticPaths() {
   const productEntries = await getCollection("products");
   return productEntries.map((product) => ({
@@ -23,9 +13,8 @@ export async function getStaticPaths() {
   }));
 }
 
-
 const { product } = Astro.props;
-console.log(product.data.tabs[0].title);
+
 const structuredData ={
   "@context": "https://schema.org",
   "@graph": [
@@ -37,8 +26,8 @@ const structuredData ={
       "logo": {
         "@type": "ImageObject",
         "@id": "https://digitallink.ae/#logo",
-        "url": "https://digitallink.ae/wp-content/uploads/2023/04/imageedit_3_7633242330.png",
-        "contentUrl": "https://digitallink.ae/wp-content/uploads/2023/04/imageedit_3_7633242330.png",
+        "url": product.data.main.imgCard,
+        "contentUrl": product.data.main.imgCard,
         "caption": "digitallink.ae",
         "inLanguage": "en-US",
         "width": 1000,
@@ -57,42 +46,42 @@ const structuredData ={
     },
     {
       "@type": "ImageObject",
-      "@id": "https://digitallink.ae/wp-content/uploads/2023/07/dh-ipc-hfw1230s_thumb.png",
-      "url": "https://digitallink.ae/wp-content/uploads/2023/07/dh-ipc-hfw1230s_thumb.png",
+      "@id": product.data.main.imgCard,
+      "url": product.data.main.imgCard,
       "width": 400,
       "height": 400,
       "inLanguage": "en-US"
     },
     {
       "@type": "ItemPage",
-      "@id": "https://digitallink.ae/product/ipc-hfw1230s/#webpage",
-      "url": "https://digitallink.ae/product/ipc-hfw1230s/",
-      "name": "IPC-HFW1230S - Digital Link Technology LLC",
+      "@id": product.data.main.imgMain+"/#webpage",
+      "url": product.data.main.imgMain,
+      "name":  product.data.main.title +"-Digital Link Technology LLC",
       "datePublished": "2023-07-20T14:56:52+01:00",
       "dateModified": "2023-08-15T11:27:42+01:00",
       "isPartOf": {
         "@id": "https://digitallink.ae/#website"
       },
       "primaryImageOfPage": {
-        "@id": "https://digitallink.ae/wp-content/uploads/2023/07/dh-ipc-hfw1230s_thumb.png"
+        "@id": product.data.main.imgMain
       },
       "inLanguage": "en-US",
       "breadcrumb": {
-        "@id": "https://digitallink.ae/product/ipc-hfw1230s/#breadcrumb"
+        "@id": product.data.main.imgMain+"/#breadcrumb"
       }
     },
     {
       "@type": "Product",
-      "name": "IPC-HFW1230S - Digital Link Technology LLC",
-      "description": "2MP IR Mini-Bullet Network Camera&gt; 1/2.7” 2Megapixel progressive CMOS &gt; H.265&amp; H.264 dual-stream encoding &gt; 25/30fps@1080P(1920×1080) &gt; DWDR, Day/Night(ICR), 3DNR, AWB, AGC, BLC &gt; Multiple network monitoring: Web viewer, CMS(DSS/PSS) &amp; DMSS &gt; 2.8 mm fixed lens (3.6mm optional) &gt; Max IR LEDs Length 30m &gt; IP67, PoE",
+      "name": product.data.description.title,
+      "description": product.data.description.subTitle,
       "category": "Uncategorized",
       "mainEntityOfPage": {
-        "@id": "https://digitallink.ae/product/ipc-hfw1230s/#webpage"
+        "@id": product.data.main.imgMain + "/#breadcrumb"
       },
       "image": [
         {
           "@type": "ImageObject",
-          "url": "https://digitallink.ae/wp-content/uploads/2023/07/dh-ipc-hfw1230s_thumb.png",
+          "url": product.data.main.imgCard ,
           "height": 400,
           "width": 400
         }
@@ -106,8 +95,8 @@ const structuredData ={
       },
       "review": [
         {
-          "@type": "Review",
-          "@id": "https://digitallink.ae/product/ipc-hfw1230s/#li-comment-104",
+        "@type": "Review",
+         
           "description": "Very well worth the money.",
           "datePublished": "2022-05-18 02:00:00",
           "reviewRating": {
@@ -121,93 +110,13 @@ const structuredData ={
             "name": "Phoenix"
           }
         },
-        {
-          "@type": "Review",
-          "@id": "https://digitallink.ae/product/ipc-hfw1230s/#li-comment-103",
-          "description": "Good service.",
-          "datePublished": "2022-01-28 11:00:00",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": 5,
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "David"
-          }
-        },
-        {
-          "@type": "Review",
-          "@id": "https://digitallink.ae/product/ipc-hfw1230s/#li-comment-102",
-          "description": "Good quality.",
-          "datePublished": "2022-01-14 06:00:00",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": 4,
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Paul"
-          }
-        },
-        {
-          "@type": "Review",
-          "@id": "https://digitallink.ae/product/ipc-hfw1230s/#li-comment-101",
-          "description": "Good quality.",
-          "datePublished": "2021-10-16 16:00:00",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": 5,
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Richard"
-          }
-        },
-        {
-          "@type": "Review",
-          "@id": "https://digitallink.ae/product/ipc-hfw1230s/#li-comment-100",
-          "description": "Good quality.",
-          "datePublished": "2021-10-15 09:00:00",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": 4,
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Ryder"
-          }
-        },
-        {
-          "@type": "Review",
-          "@id": "https://digitallink.ae/product/ipc-hfw1230s/#li-comment-99",
-          "description": "Very fast delivery.",
-          "datePublished": "2021-07-19 22:00:00",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": 5,
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Ryder"
-          }
-        }
+              
       ],
-      "@id": "https://digitallink.ae/product/ipc-hfw1230s/#richSnippet"
+      
     }
   ]
 }
 ---
-
 <Layout title={product.data.main.title + " |Digital Link Technology"}, structuredData={structuredData}>
   <!-- <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
   </div> -->
