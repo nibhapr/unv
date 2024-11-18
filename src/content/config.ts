@@ -10,8 +10,8 @@ const productsCollection = defineCollection({
       title: z.string(),
       subTitle: z.string(),
       content: z.string(),
-      imgCard: image(),
-      imgMain: image(),
+      imgCard: z.string(),
+      imgMain: z.string(),
       imgAlt: z.string(),
     }),
     tabs: z.array(

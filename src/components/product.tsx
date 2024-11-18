@@ -24,7 +24,7 @@ const product = ({ product }: { product: Product }) => {
         <motion.div initial={{x: '50%', opacity: 0}} animate={{x: 0, opacity: 1}} transition={{duration: 1, delay: 1.5}}>
           <img
             src={product.data.main.imgMain.src}
-            className="w-[600px]"
+            className="w-[400px]"
             alt={product.data.main.imgAlt}
             loading={"eager"}
           />

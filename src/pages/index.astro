@@ -11,7 +11,9 @@ import FeatureComponents from "~/components/FeatureComponents.astro";
 import Sections from "~/components/Sections.astro";
 import Unvdigi from "~/components/Unvdigi.astro";
 import Whatsapp from "~/components/Whatsapp";
-
+const title: string =
+  "UNV Authorized distributor in Dubai,U.A.E";
+const description: string = "Premier Hikvision Distributor in Dubai, UAE. Explore our range of genuine products and benefit from expert support. Contact us for inquiries";
 
 const testimonials: CollectionEntry<"testimonials">[] = (
   await getCollection("testimonials")
@@ -19,10 +21,91 @@ const testimonials: CollectionEntry<"testimonials">[] = (
   (a: CollectionEntry<"testimonials">, b: CollectionEntry<"testimonials">) =>
     a.data.id - b.data.id
 );
+const structuredData = {
+ "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://unvdubai.com/#organization",
+      "name": "Digital Link Technology LLC",
+      "url": "https://unvdubai.com",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://dubai-hikvision.com/logo.jpg",
+        "url": "https://digitallink.ae/wp-content/uploads/2023/04/imageedit_3_7633242330.png",
+        "contentUrl": "https://digitallink.ae/wp-content/uploads/2023/04/imageedit_3_7633242330.png",
+        "caption": "unvdubai",
+        "inLanguage": "en-US",
+        "width": 1000,
+        "height": 375
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://unvdubai.com/#website",
+      "url": "https://unvdubai.com",
+      "name": "unvdubai.com",
+      "publisher": {
+        "@id": "https://unvdubai.com/#organization"
+      },
+      "inLanguage": "en-US",
+      
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://dubai-hikvision.com/logo.jpg",
+      "url": "https://dubai-hikvision.com/logo.jpg",
+      "width": 200,
+      "height": 200,
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://unvdubai.com/#webpage",
+      "url": "https://unvdubai.com/",
+      "name": "Digital Link Technology LLC - UNV National Distributor in Dubai, UAE, 25th St - Naif - Dubai - United Arab Emirates - Digital Link Technology LLC",
+      "datePublished": "2023-05-05T12:19:39+01:00",
+      "dateModified": "2024-10-28T11:05:33+00:00",
+      "about": {
+        "@id": "https://unvdubai.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://unvdubai.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://digitallink.ae/wp-content/uploads/2023/08/UNV.png"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Article",
+      "headline": "Digital Link Technology LLC - UNV National Distributor in Dubai, UAE, 25th St - Naif - Dubai - United Arab Emirates - Digital Link Technology LLC",
+      "datePublished": "2023-05-05T12:19:39+01:00",
+      "dateModified": "2024-10-28T11:05:33+00:00",
+      "publisher": {
+        "@id": "https://unvdubai.com/#organization"
+      },
+      "description": "A leading end-to-end digital solutions company specializing in digital strategy and consulting for business success.",
+      "name": "Digital Link Technology LLC - UNV National Distributor in Dubai, UAE, 25th St - Naif - Dubai - United Arab Emirates - Digital Link Technology LLC",
+      "@id": "https://unvdubai.com/#richSnippet",
+      "isPartOf": {
+        "@id": "https://unvdubai.com/#webpage"
+      },
+      "inLanguage": "en-US",
+      "mainEntityOfPage": {
+        "@id": "https://unvdubai.com/#webpage"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": []
+      }
+    }
+  ]
+};
 
 ---
 
-<Layout>
+<Layout title={title} description ={description} structuredData={structuredData}>
 <Unvdigi/> 
 <Sections>
 <Hero client:load />
