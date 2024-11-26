@@ -13,21 +13,23 @@ export async function getStaticPaths() {
   }));
 }
 
+
 const { product } = Astro.props;
+
 
 const structuredData ={
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://digitallink.ae/#organization",
+      "@id": "https://unvdubai.com/#organization",
       "name": "Digital Link Technology LLC",
-      "url": "https://digitallink.ae",
+      "url": "https://unvdubai.com",
       "logo": {
         "@type": "ImageObject",
-        "@id": "https://digitallink.ae/#logo",
-        "url": product.data.main.imgCard,
-        "contentUrl": product.data.main.imgCard,
+        "@id": "https://unvdubai.com/#logo",
+        "url": `${Astro.url.origin}${product.data.main.imgCard.src}`,
+        "contentUrl": `${Astro.url.origin}${product.data.main.imgMain.src}`,
         "caption": "digitallink.ae",
         "inLanguage": "en-US",
         "width": 1000,
@@ -36,52 +38,52 @@ const structuredData ={
     },
     {
       "@type": "WebSite",
-      "@id": "https://digitallink.ae/#website",
-      "url": "https://digitallink.ae",
+      "@id": "https://unvdubai.com/#website",
+      "url": "https://unvdubai.com",
       "name": "digitallink.ae",
       "publisher": {
-        "@id": "https://digitallink.ae/#organization"
+        "@id": "https://unvdubai.com/#organization"
       },
       "inLanguage": "en-US"
     },
     {
       "@type": "ImageObject",
-      "@id": product.data.main.imgCard,
-      "url": product.data.main.imgCard,
+      "@id": `${Astro.url.origin}${product.data.main.imgMain.src}`,
+      "url": `${Astro.url.origin}${product.data.main.imgCard.src}`,
       "width": 400,
       "height": 400,
       "inLanguage": "en-US"
     },
     {
       "@type": "ItemPage",
-      "@id": product.data.main.imgMain+"/#webpage",
-      "url": product.data.main.imgMain,
-      "name":  product.data.main.title +"-Digital Link Technology LLC",
+      "@id":`${Astro.url.origin}/${product.data.main.imgMain.src}`+"/#webpage",
+      "url": `${Astro.url.origin}/${product.data.main.imgMain.src}`,
+      "name":  product.data.main.imgMain +"-Digital Link Technology LLC",
       "datePublished": "2023-07-20T14:56:52+01:00",
       "dateModified": "2023-08-15T11:27:42+01:00",
       "isPartOf": {
-        "@id": "https://digitallink.ae/#website"
+        "@id": "https://unvdubai.com/#website"
       },
       "primaryImageOfPage": {
-        "@id": product.data.main.imgMain
+        "@id": `${Astro.url.origin}${product.data.main.imgMain.src}`, 
       },
       "inLanguage": "en-US",
       "breadcrumb": {
-        "@id": product.data.main.imgMain+"/#breadcrumb"
+        "@id":`${Astro.url.origin}${product.data.main.imgMain.src}`+"/#breadcrumb",
       }
     },
     {
       "@type": "Product",
-      "name": product.data.description.title,
-      "description": product.data.description.subTitle,
+      "name": product.data.description.title, 
+      "description": product.data.description.subTitle, 
       "category": "Uncategorized",
       "mainEntityOfPage": {
-        "@id": product.data.main.imgMain + "/#breadcrumb"
+        "@id": `${Astro.url.origin}${product.data.main.imgMain.src}`+"/#breadcrumb",
       },
       "image": [
         {
           "@type": "ImageObject",
-          "url": product.data.main.imgCard ,
+          "url": `${Astro.url.origin}${product.data.main.imgCard.src}`,
           "height": 400,
           "width": 400
         }

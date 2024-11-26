@@ -31,8 +31,8 @@ const structuredData = {
       "url": "https://unvdubai.com",
       "logo": {
         "@type": "ImageObject",
-        "@id": "https://dubai-hikvision.com/logo.jpg",
-        "url": "https://digitallink.ae/wp-content/uploads/2023/04/imageedit_3_7633242330.png",
+        "@id": `${Astro.url.origin}/unvdubai.png`,
+        "url": `${Astro.url.origin}/unvdubai.png`,
         "contentUrl": "https://digitallink.ae/wp-content/uploads/2023/04/imageedit_3_7633242330.png",
         "caption": "unvdubai",
         "inLanguage": "en-US",
@@ -53,8 +53,8 @@ const structuredData = {
     },
     {
       "@type": "ImageObject",
-      "@id": "https://dubai-hikvision.com/logo.jpg",
-      "url": "https://dubai-hikvision.com/logo.jpg",
+      "@id": `${Astro.url.origin}/unvdubai.png`,
+      "url": `${Astro.url.origin}/unvdubai.png`,
       "width": 200,
       "height": 200,
       "inLanguage": "en-US"
@@ -64,8 +64,9 @@ const structuredData = {
       "@id": "https://unvdubai.com/#webpage",
       "url": "https://unvdubai.com/",
       "name": "Digital Link Technology LLC - UNV National Distributor in Dubai, UAE, 25th St - Naif - Dubai - United Arab Emirates - Digital Link Technology LLC",
+      "description": "UNV Dubai Authorized Distributor in the UAE offering premium surveillance solutions including IP cameras, NVRs, and video management systems. Providing cutting-edge security technology with local support and tailored solutions for businesses and homes in the UAE.",
       "datePublished": "2023-05-05T12:19:39+01:00",
-      "dateModified": "2024-10-28T11:05:33+00:00",
+      "dateModified": "2024-11-25T11:05:33+00:00",
       "about": {
         "@id": "https://unvdubai.com/#organization"
       },
@@ -73,7 +74,7 @@ const structuredData = {
         "@id": "https://unvdubai.com/#website"
       },
       "primaryImageOfPage": {
-        "@id": "https://digitallink.ae/wp-content/uploads/2023/08/UNV.png"
+        "@id": `${Astro.url.origin}/unvdubai.png`,
       },
       "inLanguage": "en-US"
     },
@@ -81,11 +82,11 @@ const structuredData = {
       "@type": "Article",
       "headline": "Digital Link Technology LLC - UNV National Distributor in Dubai, UAE, 25th St - Naif - Dubai - United Arab Emirates - Digital Link Technology LLC",
       "datePublished": "2023-05-05T12:19:39+01:00",
-      "dateModified": "2024-10-28T11:05:33+00:00",
+      "dateModified": "2024-11-25T11:05:33+00:00",
       "publisher": {
         "@id": "https://unvdubai.com/#organization"
       },
-      "description": "A leading end-to-end digital solutions company specializing in digital strategy and consulting for business success.",
+      "description": "UNV Dubai Authorized Distributor in the UAE offering premium surveillance solutions including IP cameras, NVRs, and video management systems. Providing cutting-edge security technology with local support and tailored solutions for businesses and homes in the UAE.",
       "name": "Digital Link Technology LLC - UNV National Distributor in Dubai, UAE, 25th St - Naif - Dubai - United Arab Emirates - Digital Link Technology LLC",
       "@id": "https://unvdubai.com/#richSnippet",
       "isPartOf": {
@@ -94,6 +95,17 @@ const structuredData = {
       "inLanguage": "en-US",
       "mainEntityOfPage": {
         "@id": "https://unvdubai.com/#webpage"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Digital Link Technology LLC"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url":  `${Astro.url.origin}/unvdubai.png`,
+        "width": 1200,
+        "height": 630,
+        "caption": "UNV Dubai Authorized Distributor"
       },
       "speakable": {
         "@type": "SpeakableSpecification",
