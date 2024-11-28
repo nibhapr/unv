@@ -1,0 +1,179 @@
+<div class="hidden sm:flex absolute inset-0 -z-50">
+  <div
+    id="icons"
+    class="relative [&>svg]:p-16 [&>svg]:w-21 [&>svg]:h-21 [&>svg]:fill-current [&>svg]:opacity-0 [&>svg]:absolute w-half h-full"
+  >
+    <svg width="500" height="500" viewBox="0 0 100 100">
+     
+      <image
+        href="../float/dahua.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+     
+    </svg>
+
+    <svg width="500" height="500" viewBox="0 0 100 100">
+     
+      <image
+        href="../float/dahua.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+     
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+    
+      <image
+        href="../float/unv.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+      
+    
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+   
+      <image
+        href="../float/grand.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+     
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+    
+      <image
+        href="../float/western.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+   
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+      <!-- <circle cx="50" cy="50" r="50" fill="white"></circle> -->
+      <image
+        href="../float/megvi.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+   
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+      <!-- <circle cx="50" cy="50" r="50" fill="white"></circle> -->
+      <image
+        href="../float/unv.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+   
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+      <!-- <circle cx="50" cy="50" r="50" fill="white"></circle> -->
+      <image
+        href="../float/unv.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+   
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+      <!-- <circle cx="100" cy="100" r="100" fill="white"></circle> -->
+      <image
+        href="../float/hik.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+   
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+      <!-- <circle cx="100" cy="100" r="100" fill="white"></circle> -->
+      <image
+        href="../float/hik.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+  
+    </svg>
+    <svg width="500" height="500" viewBox="0 0 100 100">
+      <!-- <circle cx="100" cy="100" r="100" fill="white"></circle> -->
+      <image
+        href="../float/hik.svg"
+        x="50"
+        y="50"
+        width="50"
+        height="50"
+      />
+    
+    </svg>
+  </div>
+</div>
+
+<script type="module">
+  const hero = document.getElementById("icons");
+  const svgs = Array.from(hero.querySelectorAll("svg"));
+  var w = window.innerWidth ;
+  var h = window.innerHeight;
+  function handleResize() {
+    // Get window width and height
+    w = window.innerWidth;
+    h = window.innerHeight;
+
+    // Do something with the width and height
+    // console.log("Window width:", w);
+    // console.log("Window height:", h);
+  }
+  window.addEventListener("resize", handleResize);
+  function animateBackgroundIcons() {
+    const availableSvgs = svgs.filter((svg) => !svg.isAnimating);
+    const svgToAnimate =
+      availableSvgs[Math.floor(Math.random() * availableSvgs.length)];
+    if (!svgToAnimate) return;
+    const svgWidth = svgToAnimate.getBoundingClientRect().width;
+    const svgHeight = svgToAnimate.getBoundingClientRect().height;
+    const maxLeft = w - svgWidth;
+    const maxTop = h - svgHeight;
+    const randomLeft = Math.floor(Math.random() * maxLeft);
+    const randomTop = Math.floor(Math.random() * maxTop);
+    svgToAnimate.addEventListener(
+      "animationend",
+      () => {
+        svgToAnimate.classList.remove("animate-moving-background");
+        svgToAnimate.removeAttribute("style");
+        svgToAnimate.isAnimating = false;
+      },
+      { once: true }
+    );
+    svgToAnimate.setAttribute(
+      "style",
+      // `top: ${Math.floor(Math.random() * h)}px;
+      // 	left: ${Math.floor(Math.random() * w)}px;`
+      `top: ${randomTop}px;
+            left: ${randomLeft}px;`
+    );
+    svgToAnimate.classList.add("animate-moving-background");
+    svgToAnimate.isAnimating = true;
+  }
+  setInterval(animateBackgroundIcons, 1000);
+  animateBackgroundIcons();
+</script>

@@ -1,0 +1,73 @@
+---
+// Importing necessary components
+import Layout from '~/layouts/Layout.astro';
+import CardSmall from "~/components/blogs/CardSmall.astro";
+import FeaturesStatsAlt from "~/components/features/FeaturesStatsAlt.astro";
+
+
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Fetching all the product related content and sorting it by main.id
+const product: CollectionEntry<"products">[] = (
+  await getCollection("products")
+).sort(
+  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+    a.data.main.id - b.data.main.id,
+);
+
+// Define variables for page content
+const title: string = "Products";
+const subTitle: string =
+  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+
+// Testimonial data that will be rendered in the component
+
+---
+
+<Layout title="Products | Digital Link">
+
+  <div class="mt-8 w-full  sm:mb-10 md:mb-16  text-center">
+    <h2
+      class="text-balance text-2xl   font-bold text-neutral-800 dark:text-white sm:text-3xl lg:text-4xl"
+    >
+      Latest Products
+    </h2>
+  </div>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+  <section class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2 md:gap-6 xl:gap-8">
+    
+      {
+        product.map((product, index) => {
+          const position = index % 4;
+          if (position === 0 || position === 3) {
+            return <CardSmall product={product} />;
+          } else {
+            return <CardSmall product={product} />;
+          }
+        })
+      }
+      
+  </section>
+  </div>
+  <!--Features statistics section-->
+  <FeaturesStatsAlt
+    title="Why Choose Digital Link Technology for UNV Cameras in the UAE?"
+    subTitle="Digital Link Technology stands out as a premier distributor of UNV cameras in the UAE with years of experience and unparalleled expertise in the field of surveillance technology. Our team comprises seasoned professionals who are well-versed in the intricacies of UNV camera systems, ensuring that you receive the highest level of service and support"
+    benefits={[
+      "Comprehensive Product Range.",
+      "Superior Quality and Reliability.",
+      "Innovative Features and Technology.",
+      "Competitive Pricing and Value.",
+      "Trusted Partner for Security Solutions."
+    ]}
+  />
+  <!--Testimonials section-->
+  <!-- <TestimonialsSectionAlt
+    title="What Our Customers Say"
+    testimonials={testimonials}
+  /> -->
+    </Layout>

@@ -1,0 +1,19 @@
+---
+import Feature from "~/components/Feature";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const feature: CollectionEntry<"feature">[] = (
+  await getCollection("feature")
+).sort(
+  (a: CollectionEntry<"feature">, b: CollectionEntry<"feature">) =>
+    a.data.id - b.data.id
+);
+---
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+    {
+      feature.map((e) => (
+        <Feature client:load title={e.data.title} body={e.data.body} icon={e.data.icon} />
+      ))
+    }
+  </div>

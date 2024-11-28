@@ -1,0 +1,112 @@
+---
+import "~/assets/styles/tailwind.css";
+import { SEO } from "astro-seo";
+import FooterSection from "~/components/FooterSection.astro";
+import { headerData } from "~/navigation";
+import Header from "~/components/widgets/Header.astro";
+import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+export interface props{
+structuredData?: object;
+}
+const { title,description,structuredData,keywords } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <GoogleAnalytics />
+    {
+      structuredData && (
+        <script
+        is:inline
+					type="application/ld+json"
+					set:html={JSON.stringify(structuredData)}
+        />
+      )
+    }
+    <SEO
+      title={title ?? "UNV Authorized distributor in Dubai,U.A.E"}
+      description={description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE"}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          title: title ?? "UNV Authorized distributor in Dubai,U.A.E",
+          type: "article",
+          image:"https://unvdubai.com/digi.png",
+        },
+        optional:{
+          description: description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE",
+          siteName: "unv distributor in Dubai",
+          locale: "en_Us"
+
+
+        }
+      }}
+      twitter={{
+        card: "summary_large_image",
+        creator: "@@DigitalLink_ca",
+        site: "@DigitalLink_ca",
+        title: title ?? "UNV Authorized distributor in Dubai,U.A.E",
+        image: "https://unvdubai.com/digi.png",
+        imageAlt: "Digital Link Technology U.A.E",
+        description:
+          description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE.",
+      }}
+      extend={{
+      
+        
+        meta: [
+          {
+            name: "keywords",
+            content:
+              "UNV distributor, Dubai, UAE, surveillance, security" + keywords,
+          },
+          { name: "robots", content: "index, follow" },
+          { name: "language", content: "English" },
+          { name: "Author", content: "Digiimpact" },
+          {
+            name: "organization",
+            content: JSON.stringify({
+              "@context": "http://schema.org",
+              "@type": "Organization",
+              name: "Digital Link Technology Dubai",
+              url: "https://unvdubai.com/",
+              logo: "https://dubai-hikvision.com/logo.jpg",
+              description: description ??
+                "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Market, Naif, Deira",
+                addressLocality: "Dubai",
+                addressRegion: "Dubai",
+                postalCode: "123241",
+                addressCountry: "AE",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+971 4 224 1977",
+                contactType: "Sales",
+              },
+            }),
+          },
+          
+        ],
+      }}
+    />
+  </head>
+  <body class = " dark:bg-neutral-800">
+    <Header {...headerData} isSticky isFullWidth showToggleTheme />
+    <!-- <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8"> -->
+      <div class="mx-auto px-0 sm:px-0 lg:px-0">
+      <main>
+        <slot />
+      </main>
+    </div>
+    <FooterSection />
+  </body>
+</html>
