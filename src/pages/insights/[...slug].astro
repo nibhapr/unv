@@ -1,12 +1,7 @@
 ---
-// Import section components
 import Layout from "~/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-
-
-
-// Use `getStaticPaths` to generate static routes for generated pages on build
 export async function getStaticPaths() {
   const insightPosts = await getCollection("insights");
   return insightPosts.map((post) => ({
@@ -14,11 +9,33 @@ export async function getStaticPaths() {
     props: { post },
   }));
 }
-// Get the props for this page that define a specific insight post
 const { post } = Astro.props;
+const structuredData ={
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "image": "https://yourwebsite.com/images/insight-image.jpg",
+  "url": `${Astro.url.origin}/insights/${post.slug}`,
+  "datePublished": "2024-11-29",
+  "dateModified": "2024-11-29",
+   "publisher": {
+    "@type": "Organization",
+    "name": "unvdubai",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${Astro.url.origin}/unvdubai.png`,
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${Astro.url.origin}/blog`,
+  }
+}
+
 ---
 
-<Layout title={post.data.title + "UNV camera Dubai | Digital link Technology"}>
+<Layout title={post.data.title + "UNV camera Dubai | Digital link Technology"} structuredData={structuredData}>
  
   <section class="py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">

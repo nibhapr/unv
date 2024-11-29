@@ -3,9 +3,54 @@ import Layout from '../layouts/Layout.astro';
 import ContactDigi from '~/components/ContactDigi.astro';
 const title="Authorized UNV Camera Supplier & Distributor in Dubai, Sharjah & UAE"
 const description= "Digital Link Technology: Your trusted supplier and distributor of UNV cameras across Dubai, Sharjah, and the UAE. Discover our range of products today!"
+
+const structuredData = 	{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": title,
+    "url": Astro.url,
+    "logo": `${Astro.url.origin}/unvdubai.png`,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+971552929644",
+      "contactType": "Customer Service",
+      "areaServed": "AE",
+      "availableLanguage": "English",
+      "hoursAvailable": "Mo-Fr 09:00-18:00"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Baghlaf Building Shop No.11 Satellite",
+      "addressLocality": "Dubai",
+      "addressRegion": "United Arab Emirates",
+      "postalCode": "123241",
+      "addressCountry": "AE"
+    },
+    "sameAs": [
+      "https://www.facebook.com/p/Digital-Link-Technology-LLC-100087290161175",
+      "https://www.linkedin.com/company/digital-link-technology",
+	  "https://www.linkedin.com/company/digital-link-technology"
+     
+    ]
+  },
+  "about": description,
+  "potentialAction": {
+    "@type": "Action",
+    "name": "Contact Us",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${Astro.url.origin}/contact`,
+    },
+    "actionStatus": "http://schema.org/ActiveActionStatus"
+  }
+
+
+};
 ---
 
-<Layout title={title}, description= {description}>
+<Layout title={title} description={description} structuredData={structuredData}>
 	<main>
     <ContactDigi/>	
 	</main>

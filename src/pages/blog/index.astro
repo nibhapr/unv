@@ -9,29 +9,52 @@ const blogPosts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-// Get all insights posts
 const insightPosts: CollectionEntry<"insights">[] =
   await getCollection("insights");
-  
-// Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
-
-// Define variables for page content
 const title: string = "Welcome to Digital Link Technology blogs";
-const subTitle: string =
-  "From Intruders to Peace of Mind: A Guide to Selecting the Right Security System for Your Home";
+const subTitle: string = "Authorized unv distributor in dubai,U.A.E";
 const secondTitle: string = "Insights";
-const secondSubTitle: string =
-  "Stay up-to-date with the latest trends and developments in the security solution industry with insights from Digital Link Technology team of security system experts. ";
+const secondSubTitle: string = "Stay up-to-date with the latest trends and developments in the security solution industry with insights from Digital Link Technology team of security system experts. ";
+const structuredData =
+
+  {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": title,
+  "url": `${Astro.url.origin}/blog`,
+  "description": subTitle,
+  "publisher": {
+    "@type": "Organization",
+    "name": title,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${Astro.url.origin}/unvdubai.png`,
+      "width": 250,
+      "height": 60
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "unvdubai",
+    "url": `${Astro.url.origin}/blog`,
+    "sameAs": [
+    "https://www.facebook.com/p/Digital-Link-Technology-LLC-100087290161175",
+      "https://www.linkedin.com/company/digital-link-technology",
+	  "https://www.linkedin.com/company/digital-link-technology"
+    ]
+  } 
+}
+
+
 ---
 
-<Layout title={title}>
+<Layout title={title} structuredData={structuredData}>
 	<main>
 		
-    <!-- <Hero client:load />  -->
+  
   <section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full">
-    <!--Page header-->
   <div class="mx-auto max-w-3xl text-left sm:text-center">
   <h1 class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">
         {title}
@@ -43,19 +66,11 @@ const secondSubTitle: string =
   </section>
 
   <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
-    <!--Blog posts grid-->
   <div class="grid gap-6 lg:grid-cols-2">
       {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
   </div>
   </section>
-  <!--Most recent blog post-->
-  <!-- <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <CardBlogRecent blogEntry={mostRecentPost} />
-  </section> -->
-  <!--Insights section-->
-  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+   <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
     <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
       <h2
         class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"

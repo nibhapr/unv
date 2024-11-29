@@ -2,6 +2,7 @@
 
 import { z, defineCollection } from 'astro:content';
 
+
 const productsCollection = defineCollection({
   type: 'content',
     schema: ({ image }) => z.object({
@@ -50,6 +51,7 @@ const productsCollection = defineCollection({
       second: image().optional(),
       third: image().optional(),
     }),
+    
   }),
 });
 

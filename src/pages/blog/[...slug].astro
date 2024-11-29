@@ -18,16 +18,47 @@ export async function getStaticPaths() {
     props: { post },
   }));
 }
-// Get the current post's data
 const { post } = Astro.props;
-
 const blogPosts: CollectionEntry<"blog">[] = await getCollection("blog");
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.slug !== post.slug
 );
+const structuredData ={
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "url": `${Astro.url.origin}/blog/${post.slug}`,
+  "datePublished": post.data.pubDate,
+  "dateModified": post.data.pubDate,
+  "author": {
+    "@type": "Person",
+    "name": post.data.author,
+    "url": `${Astro.url.origin}/blog/${post.slug}`,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": post.data.title,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${Astro.url.origin}/unvdubai.png`,
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id":  `${Astro.url.origin}/blog`,
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": post.data.cardImage,
+    "width": 1200,
+    "height": 630
+  }
+}
+
 ---
 
-<Layout title={post.data.title + " | UNV camera dubai"}>
+<Layout title={post.data.title + " | UNV camera dubai"} structuredData={structuredData} >
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
@@ -36,13 +67,8 @@ const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
           <div class="grow">
             <div class="flex items-center justify-between gap-x-2">
               <div>
-                <div
-                  class="hs-tooltip inline-block [--placement:bottom] [--trigger:hover]"
-                >
-                  <!--Post metadata and author info-->
-                  <span
-                    class="font-bold text-neutral-700 dark:text-neutral-300"
-                  >
+              <div class="hs-tooltip inline-block [--placement:bottom] [--trigger:hover]">
+              <span class="font-bold text-neutral-700 dark:text-neutral-300">
                     {post.data.author}
                   </span>
                 </div>

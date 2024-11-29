@@ -27,12 +27,12 @@ const Slider = () => {
           },
         }}
       >
-        {/* Render images once fetched */}
+
         
         {sliders ? sliders.map((slider, index) => (
                     <div key={index} className="flex-shrink-0 overflow-x-hidden">
                         <div className="m-8 md:w-64 md:h-64 w-52 h-52 items-center justify-center border-2 border-gray-600 p-12 transform transition duration-500 hover:scale-110">
-                            {/* Render the image using the fetched URL */}
+                          
                             <img src={slider.data.slider} alt={slider.data.sliderAlt} style={{ maxWidth: '100%', maxHeight: '100%' }} />
                         </div>
                     </div>
