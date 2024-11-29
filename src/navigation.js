@@ -113,32 +113,13 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Features', href: '#contact' },
+        { text: 'Features', href: 'contact' },
         { text: 'Team', href: 'about' },
-        { text: 'Home', href: 'product' },
+        { text: 'Home', href: '' },
         { text: 'Resources', href: 'blog' },
       ],
     },
-    // {
-    //   title: 'Platform',
-    //   links: [
-    //     { text: 'Developer API', href: '#' },
-    //     { text: 'Partners', href: '#' },
-    //     { text: 'Atom', href: '#' },
-    //     { text: 'Electron', href: '#' },
-    //     { text: 'AstroWind Desktop', href: '#' },
-    //   ],
-    // },
-    // {
-    //   title: 'Support',
-    //   links: [
-    //     { text: 'Docs', href: '#' },
-    //     { text: 'Community Forum', href: '#' },
-    //     { text: 'Professional Services', href: '#' },
-    //     { text: 'Skills', href: '#' },
-    //     { text: 'Status', href: '#' },
-    //   ],
-    // },
+   
     {
       title: 'Company',
       links: [

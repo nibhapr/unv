@@ -1,12 +1,9 @@
 ---
-// Import the necessary dependencies
 import FooterSocialLink from "~/components/ui/FooterSocialLink.astro";
 import EmailFooterInput from "~/components/ui/EmailFooterInput.astro";
-import { footerData, headerData } from "~/navigation";
+import { footerData } from "~/navigation";
 import { socialLinks } from "~/navigation2";
 import Logo from "~/components/Logo.astro";
-
-// Define the variables that will be used in this component
 const sectionThreeTitle: string = "Stay up to date";
 const sectionThreeContent: string =
   "Stay updated with the latest security tips.";
@@ -21,8 +18,7 @@ const sectionThreeContent: string =
              
         <Logo/>
       </div>
-      <!-- An array of links for Product and Company sections -->
-      {
+          {
         footerData.links.map((title) => (
           <div class="col-span-1">
             <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
