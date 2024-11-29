@@ -7,7 +7,12 @@ import sitemap from "@astrojs/sitemap";
 import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
-  site: 'https://unvdubai.com',
+  site: 'https://unvdubai.com/dist',
+  buildOptions: {
+    site: 'https://unvdubai.com/dist', 
+  },
+  output: 'static', 
+
   integrations: [tailwind({applyBaseStyles: false}), 
     sitemap(), 
     robotsTxt(),
