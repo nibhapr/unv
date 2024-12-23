@@ -5,6 +5,7 @@ import FooterSection from "~/components/FooterSection.astro";
 import { headerData } from "~/navigation";
 import Header from "~/components/widgets/Header.astro";
 import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
+import Whatsapp from "~/components/Whatsapp";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 export interface props{
 structuredData?: object;
@@ -102,5 +103,6 @@ const { title,description,structuredData,keywords } = Astro.props;
       </main>
     </div>
     <FooterSection />
+    <Whatsapp client:load />
   </body>
 </html>

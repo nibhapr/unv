@@ -1,0 +1,1 @@
+const t="slider-1.md",d="slider",e="slider-1",n="",s={id:1,slider:"../slider/1.webp",sliderAlt:"unvdubai"},i={type:"content",filePath:"C:/xampp1/htdocs/unv/src/content/slider/slider-1.md",rawData:void 0};export{i as _internal,n as body,d as collection,s as data,t as id,e as slug};
