@@ -26,7 +26,7 @@ const MapContainer = ({ APIKEY }: { APIKEY: string }) => {
         <InfoWindow position={placeCoordinates}>
         
         <div>
-          <h4 style= {{color:"blue",fontWeight:"bold",fontSize:"18px"}}>Digital Link Technology</h4>
+          <h4 style= {{color:"blue",fontWeight:"bold",fontSize:"18px"}}>unvdubai Technology</h4>
           <p style = {{color:"blue", fontWeight: "bold"}}>UNV National Distributor in DUBAI,U.A.E</p>
           <p style = {{color: "blue"}}>Mobile: +971555529469 </p>
         </div>

@@ -125,7 +125,6 @@ export const footerData = {
       links: [
         { text: 'About', href: 'about' },
         { text: 'Blog', href: 'blog' },
-        // { text: 'Careers', href: '#' },
         { text: 'Contact', href: 'contact' },
         
       ],

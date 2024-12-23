@@ -1,5 +1,5 @@
 site:
-  name: Digital Link
+  name: unvdubai
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false

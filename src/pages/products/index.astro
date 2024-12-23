@@ -11,7 +11,7 @@ const product: CollectionEntry<"products">[] = (
     a.data.main.id - b.data.main.id,
 );
 const title: string = "unv products listing Page";
-const subTitle: string ="Why choose digitallink technology to buy unv products from dubai";
+const subTitle: string ="Why choose unvdubai to buy unv products from dubai";
 const structuredData =
   {
   "@context": "https://schema.org",
@@ -23,7 +23,7 @@ const structuredData =
   "itemListElement": product.map((p) => {
     return {
       "@type": "ListItem",
-      "position": 1,
+      "position": p.data.main.id,
       "url":  `${Astro.url.origin}/products/${p.slug} `,
       "name": p.data.main.title,
       "image": "name",

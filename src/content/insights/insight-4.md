@@ -1,7 +1,9 @@
 ---
+id: 4
 title: "5MP Fixed IR Bullet Analog Camera"
 description: "Step into a world of enhanced security with the 5MP Fixed IR Bullet Analog Camera from UNV. Crafted with precision engineering and innovative features, this camera provides reliable surveillance coverage with crystal-clear imaging, day or night."
 cardImage: "../../assets/images/digi2.jpg"
+pubDate: 2024-02-06
 cardImageAlt: "Top view mechanical tools arrangement"
 contents: [
  "5MP high quality image",

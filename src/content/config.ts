@@ -56,8 +56,10 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
+  
   type: "content",
   schema: ({ image }) => z.object ({
+  id: z.number(),
   title: z.string(),
   description: z.string(),
   contents: z.array(z.string()),
@@ -76,6 +78,8 @@ const blogCollection = defineCollection({
 const insightsCollection = defineCollection({
   type: "content",
   schema: ({ image }) => z.object ({
+  id: z.number(),
+  pubDate: z.date(),
   title: z.string(),
   description: z.string(),
   contents: z.array(z.string()),

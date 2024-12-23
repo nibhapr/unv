@@ -11,40 +11,77 @@ const blogPosts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
 );
 const insightPosts: CollectionEntry<"insights">[] =
   await getCollection("insights");
-const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
-const title: string = "Welcome to Digital Link Technology blogs";
-const subTitle: string = "Authorized unv distributor in dubai,U.A.E";
+const title: string = "Welcome to unvdubai blogs";
+const subTitle: string = "unv distributor in dubai,U.A.E";
 const secondTitle: string = "Insights";
-const secondSubTitle: string = "Stay up-to-date with the latest trends and developments in the security solution industry with insights from Digital Link Technology team of security system experts. ";
-const structuredData =
-
-  {
+const secondSubTitle: string = "Stay up-to-date with the latest trends and developments in the security solution industry with insights from unvdubai Technology team of security system experts. ";
+const structuredData ={
   "@context": "https://schema.org",
-  "@type": "WebSite",
+  "@type": "Blog",
   "name": title,
   "url": `${Astro.url.origin}/blog`,
   "description": subTitle,
-  "publisher": {
-    "@type": "Organization",
-    "name": title,
+  "itemListElement": blogPosts.map((p) => {
+    return {
+      "@type": "blogPost",
+      "position": p.data.id,
+      "url":  `${Astro.url.origin}/blog/${p.slug} `,
+      "name": p.data.title,
+      "image": p.data.cardImage,
+      "publisher": {
+      "@type": "Organization",
+      "name": title,
     "logo": {
       "@type": "ImageObject",
       "url": `${Astro.url.origin}/unvdubai.png`,
       "width": 250,
       "height": 60
-    }
-  },
-  "author": {
-    "@type": "Person",
-    "name": "unvdubai",
-    "url": `${Astro.url.origin}/blog`,
-    "sameAs": [
-    "https://www.facebook.com/p/Digital-Link-Technology-LLC-100087290161175",
+    },
+    "author": {
+      "@type": "Person",
+      "name": p.data.author,
+      "url": `${Astro.url.origin}/blog`,
+      "sameAs": [
+      "https://www.facebook.com/p/Digital-Link-Technology-LLC-100087290161175",
       "https://www.linkedin.com/company/digital-link-technology",
-	  "https://www.linkedin.com/company/digital-link-technology"
+	    "https://www.linkedin.com/company/digital-link-technology"
     ]
-  } 
+  } ,
+  "datePublished": p.data.pubDate, 
+      }
+    }
+  }),
+  "insightlistelement": insightPosts.map((p) => {
+    return {
+      "@type": "",
+      "position": p.data.id,
+      "url":  `${Astro.url.origin}/insights/${p.slug} `,
+      "name": p.data.title,
+      "image": p.data.cardImage,
+      "publisher": {
+      "@type": "Organization",
+      "name": title,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${Astro.url.origin}/unvdubai.png`,
+      "width": 250,
+      "height": 60
+    },
+    "author": {
+      "@type": "Person",
+      "url": `${Astro.url.origin}/insights`,
+      "sameAs": [
+      "https://www.facebook.com/p/Digital-Link-Technology-LLC-100087290161175",
+      "https://www.linkedin.com/company/digital-link-technology",
+	    "https://www.linkedin.com/company/digital-link-technology"
+    ]
+  } ,
+  "datePublished": p.data.pubDate, 
+      }
+    }
+  }),
+
 }
 
 
@@ -52,9 +89,7 @@ const structuredData =
 
 <Layout title={title} structuredData={structuredData}>
 	<main>
-		
-  
-  <section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full">
+	<section class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full">
   <div class="mx-auto max-w-3xl text-left sm:text-center">
   <h1 class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl">
         {title}

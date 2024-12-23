@@ -29,73 +29,69 @@ const { title,description,structuredData,keywords } = Astro.props;
         />
       )
     }
+   
     <SEO
-      title={title ?? "UNV Authorized distributor in Dubai,U.A.E"}
-      description={description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE"}
-      canonical={canonicalURL}
-      openGraph={{
-        basic: {
-          title: title ?? "UNV Authorized distributor in Dubai,U.A.E",
-          type: "article",
-          image:"https://unvdubai.com/digi.png",
-        },
-        optional:{
-          description: description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE",
-          siteName: "unv distributor in Dubai",
-          locale: "en_Us"
-        }
-      }}
-      twitter={{
-        card: "summary_large_image",
-        creator: "@@DigitalLink_ca",
-        site: "@DigitalLink_ca",
-        title: title ?? "UNV Authorized distributor in Dubai,U.A.E",
-        image: "https://unvdubai.com/digi.png",
-        imageAlt: "Digital Link Technology U.A.E",
-        description:
-          description ?? "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE.",
-      }}
-      extend={{
-      
-        
-        meta: [
-          {
-            name: "keywords",
-            content:
-              "UNV distributor, Dubai, UAE, surveillance, security" + keywords,
+  title={title ?? "UNV Authorized Distributor of Surveillance Products in Dubai, UAE | unvdubai Technology"}
+  description={description ?? "unvdubai is an authorized distributor of UNV products in Dubai, UAE, specializing in security cameras, surveillance systems, and CCTV solutions."}
+  canonical={canonicalURL}
+  openGraph={{
+    basic: {
+      title: title ?? "UNV Authorized Distributor of Surveillance Products in Dubai, UAE | unvdubai Technology",
+      type: "website",
+      image: "https://unvdubai.com/digi.png",
+    },
+    optional: {
+      description: description ?? "unvdubai Technology is an authorized distributor of UNV products in Dubai, UAE, specializing in security cameras and surveillance systems.",
+      siteName: "UNV Distributor in Dubai",
+      locale: "en_US",
+    },
+  }}
+  twitter={{
+    card: "summary_large_image",
+    creator: "@DigitalLink_ca",
+    site: "@DigitalLink_ca",
+    title: title ?? "UNV Authorized Distributor of Surveillance Products in Dubai, UAE",
+    image: "https://unvdubai.com/digi.png",
+    imageAlt: "unvdubai Technology U.A.E",
+    description: description ?? "unvdubai Technology is an authorized distributor of UNV products in Dubai, UAE, specializing in security cameras, surveillance systems, and CCTV solutions.",
+  }}
+  extend={{
+    meta: [
+      {
+        name: "keywords",
+        content: "UNV distributor, Dubai, UAE, surveillance, security, security cameras, CCTV solutions, UNV products, surveillance systems, digital surveillance",
+      },
+      { name: "robots", content: "index, follow" },
+      { name: "language", content: "English" },
+      { name: "Author", content: "Digiimpact" },
+      {
+        name: "organization",
+        content: JSON.stringify({
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          name: "unvdubai Technology Dubai",
+          url: "https://unvdubai.com/",
+          logo: "https://dubai-hikvision.com/logo.jpg",
+          description: description ?? "unvdubai Technology is an authorized distributor of UNV products in Dubai, UAE.",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Market, Naif, Deira",
+            addressLocality: "Dubai",
+            addressRegion: "Dubai",
+            postalCode: "123241",
+            addressCountry: "AE",
           },
-          { name: "robots", content: "index, follow" },
-          { name: "language", content: "English" },
-          { name: "Author", content: "Digiimpact" },
-          {
-            name: "organization",
-            content: JSON.stringify({
-              "@context": "http://schema.org",
-              "@type": "Organization",
-              name: "Digital Link Technology Dubai",
-              url: "https://unvdubai.com/",
-              logo: "https://dubai-hikvision.com/logo.jpg",
-              description: description ??
-                "Digital Link Technology is an authorized distributor of UNV products in Dubai, UAE.",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Market, Naif, Deira",
-                addressLocality: "Dubai",
-                addressRegion: "Dubai",
-                postalCode: "123241",
-                addressCountry: "AE",
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+971 4 224 1977",
-                contactType: "Sales",
-              },
-            }),
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "+971 4 224 1977",
+            contactType: "Sales",
           },
-          
-        ],
-      }}
-    />
+        }),
+      },
+    ],
+  }}
+/>
+
   </head>
   <body class = " dark:bg-neutral-800">
     <Header {...headerData} isSticky isFullWidth showToggleTheme />
