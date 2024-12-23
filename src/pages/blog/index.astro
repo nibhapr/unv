@@ -24,7 +24,7 @@ const structuredData ={
   "description": subTitle,
   "itemListElement": blogPosts.map((p) => {
     return {
-      "@type": "Blogpost",
+      "@type": "BlogPosting",
       "position": p.data.id,
       "url":  `${Astro.url.origin}/blog/${p.slug}`,
       "name": p.data.title,
