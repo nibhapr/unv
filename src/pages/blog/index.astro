@@ -24,9 +24,9 @@ const structuredData ={
   "description": subTitle,
   "itemListElement": blogPosts.map((p) => {
     return {
-      "@type": "blogPost",
+      "@type": "Blogpost",
       "position": p.data.id,
-      "url":  `${Astro.url.origin}/blog/${p.slug} `,
+      "url":  `${Astro.url.origin}/blog/${p.slug}`,
       "name": p.data.title,
       "image": p.data.cardImage,
       "publisher": {
@@ -54,9 +54,9 @@ const structuredData ={
   }),
   "insightlistelement": insightPosts.map((p) => {
     return {
-      "@type": "",
+      "@type": "Article",
       "position": p.data.id,
-      "url":  `${Astro.url.origin}/insights/${p.slug} `,
+      "url":  `${Astro.url.origin}/insights/${p.slug}`,
       "name": p.data.title,
       "image": p.data.cardImage,
       "publisher": {
