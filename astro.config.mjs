@@ -5,6 +5,7 @@ import icon from "astro-icon";
 import playformCompress from "@playform/compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from 'astro-robots-txt';
+import partytown from '@astrojs/partytown';
 
 export default defineConfig({
   site: 'https://unvdubai.com/dist',
@@ -14,6 +15,7 @@ export default defineConfig({
   output: 'static', 
 
   integrations: [tailwind({applyBaseStyles: false}), 
+    partytown(),
     sitemap(), 
     robotsTxt(),
     react({experimentalReactChildren: true}), 
