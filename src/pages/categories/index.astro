@@ -1,0 +1,160 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import CategoryCard from "~/components/CategoryCard.astro";
+import Sections from "~/components/Sections.astro";
+import TitleComponents from "~/components/TitleComponents.astro";
+
+// Define your categories data with placeholder images
+const categories = [
+    {
+        title: "IP Cameras",
+        description:
+            "Network cameras with high resolution and advanced features for professional surveillance systems",
+        imageUrl:
+            "https://images.unsplash.com/photo-1520869562399-e772f042f422?ixlib=rb-4.0.3",
+        href: "/categories/ip-cameras",
+        icon: "video",
+    },
+    {
+        title: "Analog Camera",
+        description:
+            "Traditional CCTV cameras offering reliable surveillance at an economical price point",
+        imageUrl:
+            "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-4.0.3",
+        href: "/categories/analog-cameras",
+        icon: "camera",
+    },
+    {
+        title: "PTZ CAMERA",
+        description:
+            "Pan-Tilt-Zoom cameras with remote directional and zoom control capabilities",
+        imageUrl:
+            "https://images.unsplash.com/photo-1517128581771-f4b8a9d8bdb9?ixlib=rb-4.0.3",
+        href: "/categories/ptz-cameras",
+        icon: "rotate-cw",
+    },
+    {
+        title: "Thermal Camera",
+        description:
+            "Advanced thermal imaging cameras for temperature detection and night vision",
+        imageUrl:
+            "https://images.unsplash.com/photo-1542219550-37153d387c27?ixlib=rb-4.0.3",
+        href: "/categories/thermal-cameras",
+        icon: "thermometer",
+    },
+    {
+        title: "NVR",
+        description:
+            "Network Video Recorders for managing and storing IP camera footage",
+        imageUrl:
+            "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-4.0.3",
+        href: "/categories/nvr",
+        icon: "hard-drive",
+    },
+    {
+        title: "DVR",
+        description:
+            "Digital Video Recorders for recording and managing analog camera systems",
+        imageUrl:
+            "https://images.unsplash.com/photo-1563770660941-20978e870e26?ixlib=rb-4.0.3",
+        href: "/categories/dvr",
+        icon: "server",
+    },
+    {
+        title: "Storage",
+        description:
+            "Professional surveillance storage solutions including HDDs and storage arrays",
+        imageUrl:
+            "https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?ixlib=rb-4.0.3",
+        href: "/categories/storage",
+        icon: "database",
+    },
+    {
+        title: "Accessories",
+        description:
+            "Essential surveillance system accessories including cables, mounts, and power supplies",
+        imageUrl:
+            "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?ixlib=rb-4.0.3",
+        href: "/categories/accessories",
+        icon: "tool",
+    },
+];
+
+const title = "Product Categories";
+---
+
+<Layout title={title}>
+    <div
+        class="bg-gradient-to-b from-gray-50 to-white dark:from-neutral-950 dark:to-neutral-900"
+    >
+        <Sections>
+            <div class="py-16">
+                <div class="max-w-2xl">
+                    <h1
+                        class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+                    >
+                        {title}
+                    </h1>
+                </div>
+
+                <div
+                    class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+                >
+                    {
+                        categories.map((category) => (
+                            <div class="transition-transform duration-300 hover:scale-105">
+                                <CategoryCard
+                                    title={category.title}
+                                    imageUrl={category.imageUrl}
+                                    href={category.href}
+                                    description={category.description}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <div
+                    class="mt-16 rounded-2xl bg-gray-50 dark:bg-neutral-800/50 p-8"
+                >
+                    <h2
+                        class="text-xl font-semibold text-gray-900 dark:text-white"
+                    >
+                        Need help choosing?
+                    </h2>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                        Our security experts are here to help you find the
+                        perfect solution for your needs.
+                    </p>
+                    <div class="mt-6">
+                        <a
+                            href="/contact"
+                            class="inline-flex items-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400"
+                        >
+                            Contact Sales
+                            <svg
+                                class="ml-2 h-4 w-4"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M13.75 6.75L19.25 12L13.75 17.25"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    d="M19 12H4.75"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </Sections>
+    </div>
+</Layout>

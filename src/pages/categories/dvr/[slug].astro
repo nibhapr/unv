@@ -1,0 +1,103 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+type Props = {
+    product: Product;
+};
+
+interface Product {
+    title: string;
+    description: string;
+    image: string;
+    features: string[];
+    specifications: {
+        [key: string]: string;
+    };
+}
+
+export async function getStaticPaths() {
+    const dvrProducts = await getCollection('dvr');
+    return dvrProducts.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { product: entry.data as Product },
+    }));
+}
+
+const { product } = Astro.props as Props;
+---
+
+<Layout
+    title={`${product.title} - UNV Dubai`}
+    description={product.description}
+>
+    <section class="relative py-20 sm:py-32">
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="relative">
+                    <img
+                        src={product.image}
+                        alt={product.title}
+                        class="w-full rounded-3xl"
+                    />
+                </div>
+
+                <div class="space-y-8">
+                    <h1 class="text-4xl font-bold">{product.title}</h1>
+
+                    <p class="text-xl text-gray-600 dark:text-gray-300">
+                        {product.description}
+                    </p>
+
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-semibold">Key Features</h2>
+                        <div class="grid grid-cols-1 gap-4">
+                            {product.features.map((feature: string) => (
+                                <div class="flex items-center space-x-3">
+                                    <span class="flex-shrink-0 w-5 h-5 text-primary">✓</span>
+                                    <span>{feature}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-semibold">Specifications</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {Object.entries(product.specifications).map(([key, value]) => (
+                                <div class="space-y-1">
+                                    <dt class="text-sm text-gray-500">
+                                        {key.charAt(0).toUpperCase() + key.slice(1)}
+                                    </dt>
+                                    <dd class="font-medium">{value}</dd>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <a
+                            href="/contact"
+                            class="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold"
+                        >
+                            Contact Sales
+                            <svg
+                                class="h-6 w-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout> 

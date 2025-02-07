@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const title = "Analog Cameras - UNV Dubai";
+const description =
+    "High-quality analog surveillance cameras with reliable performance and cost-effective solutions";
+
+const products = await getCollection("analog-cameras");
+---
+
+<Layout title={title} description={description}>
+    <section class="relative py-20 sm:py-32 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div
+            class="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10"
+        >
+        </div>
+        <div class="absolute inset-0">
+            <div
+                class="absolute -top-48 -left-48 h-96 w-96 rounded-full bg-primary/20 blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute -bottom-48 -right-48 h-96 w-96 rounded-full bg-secondary/20 blur-3xl"
+            >
+            </div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Hero Section */}
+            <div class="flex flex-col gap-8 lg:gap-12 text-center mb-24">
+                <div class="space-y-4">
+                    <div class="inline-flex justify-center">
+                        <span
+                            class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary dark:bg-primary/20"
+                        >
+                            <span class="relative flex h-3 w-3">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                                ></span>
+                                <span
+                                    class="relative inline-flex rounded-full h-3 w-3 bg-primary"
+                                ></span>
+                            </span>
+                            Reliable Surveillance Solutions
+                        </span>
+                    </div>
+
+                    <h1
+                        class="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+                    >
+                        <span class="relative">
+                            <span
+                                class="absolute -inset-1 block -skew-y-3 bg-primary/20 dark:bg-primary/30"
+                            ></span>
+                            <span class="relative text-black dark:text-white">
+                                Analog Cameras
+                            </span>
+                        </span>
+                    </h1>
+
+                    <p
+                        class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+                    >
+                        {description}
+                    </p>
+                </div>
+            </div>
+
+            {/* Products Grid */}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {
+                    products.map((camera) => (
+                        <a
+                            href={`/categories/analog-cameras/${camera.slug}`}
+                            class="block bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                        >
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img
+                                    src={camera.data.image}
+                                    alt={camera.data.title}
+                                    class="h-64 w-full object-cover"
+                                />
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold mb-2 dark:text-white">
+                                    {camera.data.title}
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                    {camera.data.description}
+                                </p>
+                                <div class="mb-4">
+                                    <h4 class="font-semibold mb-2 dark:text-white">
+                                        Key Features:
+                                    </h4>
+                                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300">
+                                        {camera.data.features
+                                            .slice(0, 3)
+                                            .map((feature: string) => (
+                                                <li>{feature}</li>
+                                            ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

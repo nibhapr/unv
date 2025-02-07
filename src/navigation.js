@@ -8,7 +8,7 @@ export const headerData = {
     },
     {
       text: 'Products',
-      href: getPermalink('products')
+      href: getPermalink('categories')
       // links: [
       //   {
       //     text: 'Features (Anchor Link)',

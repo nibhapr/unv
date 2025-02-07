@@ -1,1 +1,0 @@
-const t="slider-1.md",e="slider",d="slider-1",i="",n={id:1,slider:"../slider/1.webp",sliderAlt:"Digital link"},s={type:"content",filePath:"C:/xampp1/htdocs/unv/src/content/slider/slider-1.md",rawData:void 0};export{s as _internal,i as body,e as collection,n as data,t as id,d as slug};

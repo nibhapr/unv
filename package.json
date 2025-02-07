@@ -19,7 +19,7 @@
     "@googlemaps/js-api-loader": "^1.16.6",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
-    "@playform/compress": "^0.0.3",
+    "@playform/compress": "^0.1.7",
     "@react-google-maps/api": "^2.19.3",
     "@types/js-yaml": "^4.0.9",
     "@types/react": "^18.2.66",
