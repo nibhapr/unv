@@ -1,0 +1,23 @@
+---
+title: "NVR301-B-IQ series"
+description: "Compact 4/8/16-channel network video recorder with intelligent features and reliable performance for small-scale surveillance systems"
+image: "/images/products/nvr301-b-iq.jpg"
+features:
+  - "Ultra 265/H.265/H.264 video formats support"
+  - "4/8/16-channel IP camera input options"
+  - "Up to 12 Megapixels resolution recording"
+  - "HDMI 4K and VGA output"
+  - "Smart features including face detection"
+  - "ANR technology for network interruption backup"
+  - "Cloud upgrade support"
+  - "Supports ONVIF and RTSP protocols"
+specifications:
+  channels: "4/8/16 Channels (model dependent)"
+  storage: "1 SATA HDD, up to 10TB"
+  bandwidth: "80Mbps Input/Output"
+  videoOutput: "1 HDMI (4K), 1 VGA"
+  compression: "Ultra 265/H.265/H.264"
+  powerSupply: "DC 12V/2A"
+  dimensions: "260×222×47mm (1U)"
+  networkInterface: "1 RJ-45 10/100Mbps"
+--- 
