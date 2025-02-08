@@ -1,7 +1,7 @@
 ---
 title: "IPC3638SE-ADF28K-WP-I1"
 description: "High performance 8MP network camera featuring ColorHunter technology with Wise-ISP for 24-hour full-color imaging, advanced perimeter protection, and superior low-light performance in a weatherproof design."
-image: "/images/products/4k-hunter.jpg"
+image: "/images/categories/products/ip-cameras/IPC3638SE-ADF28K-WP-I1.png"
 features:
   - "8MP (3840×2160) resolution with 30fps recording"
   - "ColorHunter with Wise-ISP for 24-hour full-color imaging"

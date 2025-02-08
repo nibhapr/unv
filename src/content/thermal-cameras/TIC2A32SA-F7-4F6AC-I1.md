@@ -1,7 +1,7 @@
 ---
 title: "TIC2A32SA-F7-4F6AC-I1"
 description: "Advanced thermal and optical dual-spectrum bullet camera with intelligent fire detection, temperature monitoring, and smart intrusion prevention capabilities. Features dual video output with single IP address and reliable performance in challenging conditions."
-image: "/images/thermal-cameras/TIC2A32SA-F7-4F6AC-I1.png"
+image: "/images/categories/products/thermal-cameras/TIC2A32SA-F7-4F6AC-I1.png"
 features:
   - "Thermal & Optical dual-spectrum image with single IP address"
   - "1/2.8\" high sensitivity sensor for starlight monitoring"

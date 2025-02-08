@@ -1,7 +1,7 @@
 ---
 title: "NVR301-S3-P Series"
 description: "1 HDD 4/8/16-channel Network Video Recorder with PoE support, featuring Ultra 265/H.265/H.264 video formats and up to 4K resolution recording"
-image: "/images/nvr/NVR301-04S3-P4_HD_Image_1.png"
+image: "/images/categories/products/nvr/NVR301-04S3-P4.jpg"
 features:
   - Support Ultra 265/H.265/H.264 video formats
   - 4/8/16-channel input

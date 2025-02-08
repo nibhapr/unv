@@ -1,7 +1,7 @@
 ---
 title: "IPC6432LR-X16-VG1"
 description: "2MP 16X LightHunter IR Network Dome PTZ Camera with advanced features including ultra-high image quality in low light, 100m IR range, and IP66 protection"
-image: "/images/ptz-cameras/IPC6432LR-X16-VG1.png"
+image: "/images/categories/products/ptz-cameras/IPC6432LR-X16-VG1.png"
 price: "Contact for pricing"
 features:
   - High quality image with 2MP, 1/2.8" CMOS sensor

@@ -1,7 +1,7 @@
 ---
 title: "IPC3234EA-AHDZK-I1"
 description: "Professional 4MP dome network camera featuring LightHunter technology, 140dB WDR, and advanced AI capabilities for superior surveillance in challenging lighting conditions."
-image: "IPC3234EA-AHDZK-I1_HD_Image_1.png"
+image: "/images/categories/products/ip-cameras/IPC3234EA-AHDZK-I1.png"
 
 features:
   - "4MP resolution with 1/1.8\" CMOS sensor"

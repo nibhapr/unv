@@ -1,7 +1,7 @@
 ---
 title: "TIC3612SA-F2-4F3AC-I1"
 description: "Advanced thermal and optical dual-spectrum network camera featuring reliable fire detection, temperature monitoring, and smart intrusion prevention capabilities. Offers dual video with single IP address and supports multiple video compression formats."
-image: "TIC3612SA-F2-4F3AC-I1_HD_Image_1.png"
+image: "/images/categories/products/thermal-cameras/TIC3612SA-F2-4F3AC-I1.png"
 features:
   - "Thermal & Optical dual spectrum image with single IP address"
   - "1/2.8\" high sensitivity sensor for starlight monitoring"

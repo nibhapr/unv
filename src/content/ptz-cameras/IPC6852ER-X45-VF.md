@@ -1,7 +1,7 @@
 ---
 title: "IPC6852ER-X45-VF"
 description: "Professional PTZ camera featuring a 2MP 1/1.8'' CMOS sensor with 45X optical zoom and advanced Lighthunter technology for superior low-light performance. Ideal for large-scale surveillance with 250m IR range and IP66 protection."
-image: "IPC6852ER-X45-VF_HD_Image_1.png"
+image: "/images/categories/products/ptz-cameras/IPC6852ER-X45-VF.png"
 features:
   - High quality image with 2MP,1/1.8'' CMOS sensor
   - 1920*1080@30fps in the main stream

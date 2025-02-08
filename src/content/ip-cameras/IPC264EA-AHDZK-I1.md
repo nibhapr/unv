@@ -1,7 +1,7 @@
 ---
 title: "IPC264EA-AHDZK-I1"
 description: "4MP LightHunter Wise-ISP VF IR Bullet Network Camera with advanced features including ultra-low light performance, smart intrusion prevention, and metadata analysis capabilities"
-image: "/images/ip-cameras/IPC264EA-AHDZK-I1.png"
+image: "/images/categories/products/ip-cameras/IPC264EA-AHDZK-I1.png"
 price: "Contact for Price"
 features:
   - High quality 4MP image with 1/1.8" CMOS sensor

@@ -1,7 +1,7 @@
 ---
 title: "UAC-T142-AF28(40)LM-DL"
 description: "2MP ColorHunter Fixed Dual-light Turret Analog Camera with high quality imaging and smart dual light technology"
-image: "/images/cameras/UAC-T142-AF28LM-DL.png"
+image: "/images/categories/products/analog-cameras/UAC-T142-AF28(40)LM-DL.png"
 features:
   - High quality imaging with 2MP resolution
   - TVI/AHD/CVI/CVBS support
@@ -15,7 +15,7 @@ features:
   - Dual illuminators (IR and white light)
 
 specifications:
-  sensor: "1/3.0\" CMOS"
+  sensor: "1/3.0\" CMOS 2MP"
   resolution: "2 MP, 1080P (1920×1080)"
   focalLength: "2.8 mm / 4.0 mm"
   irRange: "IR: 40m (131.23 ft), White light: 40m (131.23ft)"

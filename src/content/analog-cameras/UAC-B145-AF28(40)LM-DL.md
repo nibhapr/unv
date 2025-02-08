@@ -1,7 +1,7 @@
 ---
 title: "UAC-B145-AF28(40)LM-DL"
 description: "5MP ColorHunter Fixed Dual-light Bullet Analog Camera with high quality imaging, smart dual light capability, and IP67 protection"
-image: "/images/analog-cameras/UAC-B145-AF28LM-DL.png"
+image: "/images/categories/products/analog-cameras/UAC-B145-AF28(40)LM-DL.png"
 features:
   - High quality imaging with 5MP resolution
   - TVI/AHD/CVI/CVBS support

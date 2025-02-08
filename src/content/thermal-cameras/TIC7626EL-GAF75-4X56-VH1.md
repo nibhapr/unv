@@ -1,7 +1,7 @@
 ---
 title: "TIC7626EL-GAF75-4X56-VH1"
 description: "Advanced thermal and optical dual-spectrum positioning system with passive infrared thermal imaging, fire detection capabilities, and smart intrusion prevention powered by deep learning algorithms. Features 4MP@60fps optical channel with gyroscope stabilization and 800m laser distance coverage."
-image: "/images/thermal-cameras/TIC7626EL-GAF75-4X56-VH1.png"
+image: "/images/categories/products/thermal-cameras/TIC7626EL-GAF75-4X56-VH1.png"
 price: "Contact Sales"
 features:
   - Thermal & Optical dual-spectrum imaging with single IP address

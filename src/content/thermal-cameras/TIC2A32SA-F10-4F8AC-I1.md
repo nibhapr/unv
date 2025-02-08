@@ -1,7 +1,7 @@
 ---
 title: "TIC2A32SA-F10-4F8AC-I1"
 description: "Advanced thermal and optical dual-spectrum network camera with reliable fire detection, temperature monitoring, and smart intrusion prevention capabilities. Features dual video with single IP address and high sensitivity sensor for starlight monitoring."
-image: "/images/thermal-cameras/TIC2A32SA-F10-4F8AC-I1.png"
+image: "/images/categories/products/thermal-cameras/TIC2A32SA-F10-4F8AC-I1.png"
 price: "Contact Sales"
 features:
   - Thermal & Optical dual-spectrum image with dual video on single IP address
