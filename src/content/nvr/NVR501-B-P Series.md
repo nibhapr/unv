@@ -1,7 +1,7 @@
 ---
 title: "NVR501-B-P Series"
 description: "1 HDD 4/8-channel input Network Video Recorder with PoE support, featuring Ultra 265/H.265/H.264 video formats and up to 16 Megapixels resolution recording"
-image: "/images/categories/products/nvr/NVR501-04B-P4.jpg"
+image: "/images/categories/products/nvr/NVR501-B-P Series.png"
 features:
   - Support Ultra 265/H.265/H.264 video formats
   - 4/8-channel input

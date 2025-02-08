@@ -1,7 +1,7 @@
 ---
 title: "SSD-256G-P3-M2"
 description: "256GB PCIe 3.0 NVMe SSD designed for high-performance storage applications with fast read/write speeds and reliable TLC storage technology"
-image: "/images/categories/products/storage/SSD-256G-P3-M2.jpg"
+image: "/images/categories/products/storage/SSD-256G-P3-M2.png"
 features:
   - High-speed PCIe 3.0 x4 interface
   - Fast 3100MB/s sequential read speeds
