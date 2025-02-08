@@ -41,96 +41,110 @@ const { product } = Astro.props as Props;
     title={`${product.title} - UNV Dubai`}
     description={product.description}
 >
-    {
-        product ? (
-            <section class="relative py-20 sm:py-32">
-                <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Product Image */}
-                        <div class="relative">
-                            <img
-                                src={product.image}
-                                alt={product.title}
-                                class="w-full rounded-3xl"
-                            />
+    <section class="relative py-20">
+        <div class="container mx-auto px-4">
+            {/* Product Header */}
+            <h1 class="text-4xl mb-4">{product.title}</h1>
+            <p class="text-gray-600 dark:text-gray-300 mb-8">
+                {product.description}
+            </p>
+
+            {/* Product Image and Features Grid */}
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                <div class="relative">
+                    <img
+                        src={product.image}
+                        alt={product.title}
+                        class="w-full"
+                    />
+                </div>
+
+                <div>
+                    <div class="mb-8">
+                        <h2 class="text-2xl mb-4">Digital {product.title}</h2>
+                    </div>
+
+                    {/* Tabs */}
+                    <div class="mb-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <button
+                                class="tab-button active bg-primary text-white p-3 sm:p-4 text-center transition-colors hover:bg-blue-700 rounded-lg text-sm sm:text-base"
+                                data-tab="description"
+                                aria-selected="true"
+                            >
+                                Description
+                            </button>
+                            <button
+                                class="tab-button bg-white text-primary border border-primary p-3 sm:p-4 text-center transition-colors hover:bg-gray-50 rounded-lg text-sm sm:text-base"
+                                data-tab="specifications"
+                                aria-selected="false"
+                            >
+                                Specifications
+                            </button>
                         </div>
 
-                        {/* Product Details */}
-                        <div class="space-y-8">
-                            <h1 class="text-4xl font-bold">{product.title}</h1>
-
-                            <p class="text-xl text-gray-600 dark:text-gray-300">
-                                {product.description}
-                            </p>
-
-                            <div class="space-y-4">
-                                <h2 class="text-2xl font-semibold">
-                                    Key Features
-                                </h2>
-                                <div class="grid grid-cols-1 gap-4">
-                                    {product.features.map((feature: string) => (
-                                        <div class="flex items-center space-x-3">
-                                            <span class="flex-shrink-0 w-5 h-5 text-primary">
+                        {/* Tab Content */}
+                        <div class="tab-content block" id="description">
+                            <div class="space-y-6">
+                                {
+                                    product.features.map((feature) => (
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
                                                 ✓
-                                            </span>
-                                            <span>{feature}</span>
+                                            </div>
+                                            <p>{feature}</p>
                                         </div>
-                                    ))}
-                                </div>
+                                    ))
+                                }
                             </div>
+                        </div>
 
-                            <div class="space-y-4">
-                                <h2 class="text-2xl font-semibold">
-                                    Specifications
-                                </h2>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {Object.entries(product.specifications).map(
+                        <div class="tab-content hidden" id="specifications">
+                            <div class="grid grid-cols-1 gap-4">
+                                {
+                                    Object.entries(product.specifications).map(
                                         ([key, value]) => (
-                                            <div class="space-y-1">
-                                                <dt class="text-sm text-gray-500">
-                                                    {key
-                                                        .charAt(0)
-                                                        .toUpperCase() +
-                                                        key.slice(1)}
-                                                </dt>
-                                                <dd class="font-medium">
+                                            <div class="border-l-4 border-primary pl-4">
+                                                <p class="text-gray-600">
+                                                    {key}
+                                                </p>
+                                                <p class="font-medium">
                                                     {value}
-                                                </dd>
+                                                </p>
                                             </div>
                                         ),
-                                    )}
-                                </div>
-                            </div>
-
-                            <div class="pt-8">
-                                <a
-                                    href="/contact"
-                                    class="inline-flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold"
-                                >
-                                    Contact Sales
-                                    <svg
-                                        class="h-6 w-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                        />
-                                    </svg>
-                                </a>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
+
+                    <script>
+                        // ... existing script code ...
+                    </script>
+
+                    <div class="mt-8">
+                        <a
+                            href="/contact"
+                            class="inline-flex items-center bg-primary text-white px-6 py-3 rounded"
+                        >
+                            Contact sales to learn more
+                            <svg
+                                class="h-5 w-5 ml-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-            </section>
-        ) : (
-            <div class="py-20 text-center">
-                <p>Product not found</p>
             </div>
-        )
-    }
+        </div>
+    </section>
 </Layout>
