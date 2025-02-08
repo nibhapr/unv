@@ -1,15 +1,70 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 const title = "Network Video Recorders - UNV Dubai";
-const description = 
+const description =
     "Professional Network Video Recorders (NVR) for reliable video management and storage";
+const canonicalURL = new URL("/categories/nvr", Astro.site);
 
 const products = await getCollection("nvr");
+
+// Schema markup for the product category page
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    url: canonicalURL,
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: products.map((product, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+                "@type": "Product",
+                name: product.data.title,
+                description: product.data.description,
+                image: product.data.image,
+                url: new URL(`/categories/nvr/${product.slug}`, Astro.site),
+            },
+        })),
+    },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout
+    title={title}
+    description={description}
+    canonical={canonicalURL}
+    openGraph={{
+        basic: {
+            title,
+            type: "website",
+            image: "/og-nvr.jpg", // Make sure to add an OG image
+            url: canonicalURL,
+        },
+        optional: {
+            description,
+            locale: "en_US",
+            siteName: "UNV Dubai",
+        },
+    }}
+    extend={{
+        meta: [
+            { name: "robots", content: "index, follow" },
+            {
+                name: "keywords",
+                content:
+                    "NVR, Network Video Recorder, UNV, Video Management, Security Systems, CCTV Storage, Dubai",
+            },
+        ],
+        link: [{ rel: "alternate", hreflang: "en", href: canonicalURL }],
+    }}
+>
+    <!-- Schema markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
     <section class="relative py-20 sm:py-32 overflow-hidden">
         <div
             class="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10"
@@ -112,8 +167,9 @@ const products = await getCollection("nvr");
                                     </p>
 
                                     <div class="mt-8 space-y-4">
-                                        {product.data.features.slice(0, 3).map(
-                                            (feature: string) => (
+                                        {product.data.features
+                                            .slice(0, 3)
+                                            .map((feature: string) => (
                                                 <div class="flex items-center space-x-3 group/feature">
                                                     <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover/feature:scale-110 group-hover/feature:bg-primary/20 transition-all duration-300">
                                                         <svg
@@ -134,8 +190,7 @@ const products = await getCollection("nvr");
                                                         {feature}
                                                     </span>
                                                 </div>
-                                            ),
-                                        )}
+                                            ))}
                                     </div>
                                 </div>
                             </div>
@@ -145,4 +200,4 @@ const products = await getCollection("nvr");
             </div>
         </div>
     </section>
-</Layout> 
+</Layout>

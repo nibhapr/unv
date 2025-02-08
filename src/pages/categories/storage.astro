@@ -5,11 +5,71 @@ import { getCollection } from "astro:content";
 const title = "Storage Solutions - UNV Dubai";
 const description =
     "Professional storage solutions for surveillance systems including hard drives and storage arrays";
+const canonicalURL = new URL("/categories/storage", Astro.site);
+
+// SEO metadata
+const metadata = {
+    title: title,
+    description: description,
+    openGraph: {
+        basic: {
+            title: title,
+            type: "website",
+            image: "/og-storage.jpg", // Add your OG image
+            url: canonicalURL,
+        },
+        optional: {
+            description: description,
+            locale: "en_US",
+            siteName: "UNV Dubai",
+        },
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: title,
+        description: description,
+        image: "/og-storage.jpg", // Add your Twitter card image
+    },
+};
+
+// Schema markup
+const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    url: canonicalURL,
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: (await getCollection("storage")).map(
+            (product, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                item: {
+                    "@type": "Product",
+                    name: product.data.title,
+                    description: product.data.description,
+                    image: product.data.image,
+                    url: new URL(
+                        `/categories/storage/${product.slug}`,
+                        Astro.site,
+                    ),
+                },
+            }),
+        ),
+    },
+};
 
 const products = await getCollection("storage");
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} metadata={metadata}>
+    <!-- Schema Markup -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(schemaMarkup)}
+    />
+
     <section class="relative py-20 sm:py-32 overflow-hidden">
         {/* Animated Background Elements */}
         <div

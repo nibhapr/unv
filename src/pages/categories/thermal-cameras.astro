@@ -1,15 +1,132 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 const title = "Thermal Cameras - UNV Dubai";
-const description = 
+const description =
     "Advanced thermal imaging cameras for temperature detection and night vision surveillance";
+const canonicalURL = new URL("/categories/thermal-cameras", Astro.site);
 
 const products = await getCollection("thermal-cameras");
+
+// Enhanced meta tags
+const metadata = {
+    title,
+    description,
+    openGraph: {
+        basic: {
+            title,
+            type: "website",
+            image: "/og-thermal-cameras.jpg",
+            url: canonicalURL,
+        },
+        optional: {
+            description,
+            locale: "en_US",
+            siteName: "UNV Dubai",
+        },
+    },
+    twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        image: "/og-thermal-cameras.jpg",
+    },
+};
+
+// Schema.org markup
+const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    url: canonicalURL,
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: products.map((product, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+                "@type": "Product",
+                name: product.data.title,
+                description: product.data.description,
+                image: product.data.image,
+                url: new URL(
+                    `/categories/thermal-cameras/${product.slug}`,
+                    Astro.site,
+                ),
+                brand: {
+                    "@type": "Brand",
+                    name: "UNV",
+                },
+                category: "Thermal Cameras",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    priceCurrency: "AED",
+                    seller: {
+                        "@type": "Organization",
+                        name: "Digital Link Technology",
+                    },
+                },
+            },
+        })),
+    },
+    breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                    "@id": Astro.site?.toString(),
+                    name: "Home",
+                },
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                    "@id": new URL("/categories", Astro.site).toString(),
+                    name: "Categories",
+                },
+            },
+            {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                    "@id": canonicalURL.toString(),
+                    name: "Thermal Cameras",
+                },
+            },
+        ],
+    },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout
+    title={title}
+    description={description}
+    canonical={canonicalURL}
+    openGraph={metadata.openGraph}
+    twitter={metadata.twitter}
+>
+    <!-- Additional meta tags -->
+    <Fragment slot="head">
+        <meta name="robots" content="index, follow" />
+        <meta
+            name="keywords"
+            content="thermal cameras, temperature detection, night vision cameras, UNV thermal cameras, surveillance systems, Dubai security cameras"
+        />
+        <link rel="alternate" hreflang="en" href={canonicalURL} />
+
+        <!-- Schema Markup -->
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(schemaMarkup)}
+        />
+    </Fragment>
+
     <section class="relative py-20 sm:py-32 overflow-hidden">
         {/* Animated Background Elements */}
         <div
@@ -115,8 +232,9 @@ const products = await getCollection("thermal-cameras");
                                     </p>
 
                                     <div class="mt-8 space-y-4">
-                                        {product.data.features.slice(0, 3).map(
-                                            (feature: string) => (
+                                        {product.data.features
+                                            .slice(0, 3)
+                                            .map((feature: string) => (
                                                 <div class="flex items-center space-x-3 group/feature">
                                                     <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover/feature:scale-110 group-hover/feature:bg-primary/20 transition-all duration-300">
                                                         <svg
@@ -137,8 +255,7 @@ const products = await getCollection("thermal-cameras");
                                                         {feature}
                                                     </span>
                                                 </div>
-                                            ),
-                                        )}
+                                            ))}
                                     </div>
                                 </div>
                             </div>
@@ -148,4 +265,4 @@ const products = await getCollection("thermal-cameras");
             </div>
         </div>
     </section>
-</Layout> 
+</Layout>

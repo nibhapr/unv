@@ -5,11 +5,65 @@ import { getCollection } from "astro:content";
 const title = "PTZ Cameras - UNV Dubai";
 const description =
     "Advanced Pan-Tilt-Zoom cameras with remote directional control and powerful zoom capabilities for comprehensive surveillance";
+const canonicalURL = new URL("/categories/ptz-cameras", Astro.site);
 
 const products = await getCollection("ptz-cameras");
+
+// Prepare schema markup
+const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    url: canonicalURL,
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: products.map((camera, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+                "@type": "Product",
+                name: camera.data.title,
+                description: camera.data.description,
+                image: camera.data.image,
+                url: `${canonicalURL}/${camera.slug}`,
+            },
+        })),
+    },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout
+    title={title}
+    description={description}
+    canonical={canonicalURL}
+    openGraph={{
+        basic: {
+            title,
+            type: "website",
+            image: "/og-ptz-cameras.jpg", // Make sure to add this image
+            url: canonicalURL,
+        },
+        optional: {
+            description,
+            locale: "en_US",
+            siteName: "UNV Dubai",
+        },
+    }}
+    twitter={{
+        card: "summary_large_image",
+        site: "@unvdubai", // Replace with actual Twitter handle
+        title,
+        description,
+        image: "/og-ptz-cameras.jpg", // Same as OG image
+    }}
+>
+    <!-- Schema Markup -->
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(schemaMarkup)}
+    />
+
     <section class="relative py-20 sm:py-32 overflow-hidden">
         {/* Animated Background Elements */}
         <div

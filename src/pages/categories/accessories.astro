@@ -5,11 +5,51 @@ import { getCollection } from "astro:content";
 const title = "Accessories - UNV Dubai";
 const description =
     "Professional surveillance system accessories and mounting solutions";
+const canonicalURL = new URL("/categories/accessories", Astro.site);
 
 const products = await getCollection("accessories");
+
+// Schema markup for product category page
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": products.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": product.data.title,
+        "description": product.data.description,
+        "image": product.data.image,
+        "url": `${canonicalURL}/${product.slug}`
+      }
+    }))
+  }
+};
 ---
 
 <Layout title={title} description={description}>
+    <!-- Additional Meta Tags -->
+    <>
+        <link rel="canonical" href={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="keywords" content="surveillance accessories, CCTV accessories, security camera mounts, UNV accessories, surveillance equipment, security system accessories, Dubai security solutions" />
+        
+        <!-- Schema Markup -->
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    </>
+
     <section class="relative py-20 sm:py-32 overflow-hidden">
         {/* Animated Background Elements */}
         <div

@@ -1,15 +1,113 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 const title = "Digital Video Recorders - UNV Dubai";
-const description = 
-    "Professional DVR solutions for reliable video recording and storage management";
+const description =
+    "Professional DVR solutions for reliable video recording and storage management. Explore our range of UNV DVRs with advanced features for security surveillance.";
 
 const products = await getCollection("dvr");
+
+// Enhanced meta tags
+const metaTags = {
+    title,
+    description,
+    openGraph: {
+        title,
+        description,
+        type: "website",
+        image: "/images/dvr-category.jpg",
+        url: new URL("/categories/dvr", Astro.site).toString(),
+        site_name: "UNV Dubai",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        image: "/images/dvr-category.jpg",
+    },
+};
+
+// Schema.org markup
+const schemaOrg = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    url: new URL("/categories/dvr", Astro.site).toString(),
+    mainEntity: {
+        "@type": "ItemList",
+        itemListElement: products.map((product, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+                "@type": "Product",
+                name: product.data.title,
+                description: product.data.description,
+                url: new URL(
+                    `/categories/dvr/${product.slug}`,
+                    Astro.site,
+                ).toString(),
+                image: product.data.image,
+                brand: {
+                    "@type": "Brand",
+                    name: "UNV",
+                },
+                category: "Digital Video Recorders",
+                offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    priceCurrency: "AED",
+                    priceValidUntil: new Date(
+                        new Date().setFullYear(new Date().getFullYear() + 1),
+                    ).toISOString(),
+                    seller: {
+                        "@type": "Organization",
+                        name: "Digital Link Technology",
+                    },
+                },
+            },
+        })),
+    },
+    breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                    "@id": Astro.site?.toString(),
+                    name: "Home",
+                },
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                    "@id": new URL("/categories", Astro.site).toString(),
+                    name: "Categories",
+                },
+            },
+            {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                    "@id": new URL("/categories/dvr", Astro.site).toString(),
+                    name: "Digital Video Recorders",
+                },
+            },
+        ],
+    },
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout
+    title={metaTags.title}
+    description={metaTags.description}
+    openGraph={metaTags.openGraph}
+    twitter={metaTags.twitter}
+    structuredData={schemaOrg}
+>
     <section class="relative py-20 sm:py-32 overflow-hidden">
         <div
             class="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5 dark:opacity-10"
@@ -112,8 +210,9 @@ const products = await getCollection("dvr");
                                     </p>
 
                                     <div class="mt-8 space-y-4">
-                                        {product.data.features.slice(0, 3).map(
-                                            (feature: string) => (
+                                        {product.data.features
+                                            .slice(0, 3)
+                                            .map((feature: string) => (
                                                 <div class="flex items-center space-x-3 group/feature">
                                                     <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover/feature:scale-110 group-hover/feature:bg-primary/20 transition-all duration-300">
                                                         <svg
@@ -134,8 +233,7 @@ const products = await getCollection("dvr");
                                                         {feature}
                                                     </span>
                                                 </div>
-                                            )
-                                        )}
+                                            ))}
                                     </div>
                                 </div>
                             </div>
@@ -145,4 +243,4 @@ const products = await getCollection("dvr");
             </div>
         </div>
     </section>
-</Layout> 
+</Layout>

@@ -5,11 +5,51 @@ import { getCollection } from "astro:content";
 const title = "Analog Cameras - UNV Dubai";
 const description =
     "High-quality analog surveillance cameras with reliable performance and cost-effective solutions";
+const canonicalURL = new URL("/categories/analog-cameras", Astro.site);
 
 const products = await getCollection("analog-cameras");
+
+// Prepare schema markup
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": products.map((camera, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": camera.data.title,
+        "description": camera.data.description,
+        "image": camera.data.image,
+        "url": new URL(`/categories/analog-cameras/${camera.slug}`, Astro.site)
+      }
+    }))
+  }
+};
 ---
 
 <Layout title={title} description={description}>
+    <!-- Additional Meta Tags -->
+    <Fragment slot="head">
+        <link rel="canonical" href={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="keywords" content="analog cameras, surveillance cameras, CCTV, security cameras, UNV Dubai, surveillance solutions" />
+        
+        <!-- Schema Markup -->
+        <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+    </Fragment>
+
     <section class="relative py-20 sm:py-32 overflow-hidden">
         {/* Animated Background Elements */}
         <div
