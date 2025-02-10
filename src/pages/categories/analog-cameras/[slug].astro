@@ -70,14 +70,14 @@ const { product } = Astro.props as Props;
                     <div class="mb-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                             <button
-                                class="tab-button active bg-primary text-white p-3 sm:p-4 text-center transition-colors hover:bg-blue-700 rounded-lg text-sm sm:text-base"
+                                class="tab-button active bg-primary text-white p-3 sm:p-4 text-center transition-colors rounded-lg text-sm sm:text-base font-semibold shadow-md"
                                 data-tab="description"
                                 aria-selected="true"
                             >
                                 Description
                             </button>
                             <button
-                                class="tab-button bg-white text-primary border border-primary p-3 sm:p-4 text-center transition-colors hover:bg-gray-50 rounded-lg text-sm sm:text-base"
+                                class="tab-button bg-white text-gray-800 dark:text-white border border-primary p-3 sm:p-4 text-center transition-colors rounded-lg text-sm sm:text-base font-semibold shadow-md"
                                 data-tab="specifications"
                                 aria-selected="false"
                             >
@@ -94,7 +94,7 @@ const { product } = Astro.props as Props;
                                             <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
                                                 ✓
                                             </div>
-                                            <p>{feature}</p>
+                                            <p class="text-black dark:text-white">{feature}</p>
                                         </div>
                                     ))
                                 }
@@ -146,12 +146,22 @@ const { product } = Astro.props as Props;
                                         "text-white",
                                         isActive,
                                     );
-                                    tab.classList.toggle("bg-white", !isActive);
                                     tab.classList.toggle(
-                                        "text-primary",
+                                        "bg-white",
                                         !isActive,
                                     );
-                                    tab.classList.toggle("border", !isActive);
+                                    tab.classList.toggle(
+                                        "text-gray-800",
+                                        !isActive,
+                                    );
+                                    tab.classList.toggle(
+                                        "dark:text-white",
+                                        !isActive,
+                                    );
+                                    tab.classList.toggle(
+                                        "border",
+                                        !isActive,
+                                    );
                                     tab.classList.toggle(
                                         "border-primary",
                                         !isActive,
