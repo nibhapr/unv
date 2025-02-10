@@ -1,0 +1,1 @@
+import{S as a}from"../chunks/Slider.CgzB5d5H.js";import"../chunks/jsx-runtime.C8tID1Hn.js";import"../chunks/index.5XC2200L.js";import"../chunks/astro/assets-service.CScP7A7k.js";import"../chunks/proxy.Cw4Sqpj5.js";export{a as default};
