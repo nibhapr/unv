@@ -5,8 +5,18 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
-    }
+      "~/*": [
+        "src/*"
+      ]
+    },
+    "noEmit": true,
+    "allowJs": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
-  
+  "exclude": [
+    "public/scripts/vendor/**/*"
+  ]
 }

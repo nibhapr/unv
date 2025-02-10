@@ -1,4 +1,6 @@
 ---
+id: 1
+pubDate: 2024-03-19
 title: "4K HD Intelligent color hunter"
 description: "Experience the pinnacle of surveillance technology with the 4K HD Intelligent Color Hunter UNV Camera. Engineered to deliver unparalleled clarity, precision, and reliability, this cutting-edge camera redefines what's possible in video surveillance."
 cardImage: "../../assets/images/insights/uni.jpeg"

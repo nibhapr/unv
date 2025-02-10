@@ -43,4 +43,15 @@ export default defineConfig({
   }),
 
 ],  
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'chunks/[name].[hash].js',
+          entryFileNames: 'entries/[name].[hash].js',
+        }
+      }
+    },
+    logLevel: 'error' // Only show errors, ignore warnings
+  }
 });

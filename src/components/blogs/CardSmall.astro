@@ -1,11 +1,23 @@
 ---
 // Import necessary modules and utilities
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
 
 const { product } = Astro.props;
+const optimizedImage = await getImage({src: product.data.main.imgCard});
+
 interface Props {
-  product: CollectionEntry<"products">;
+  product: CollectionEntry<"blog"> & {
+    slug: string;
+    data: {
+      main: {
+        imgCard: string;
+        imgAlt: string;
+        subTitle: string;
+      }
+    }
+  };
 }
 // Define classes to be used with the Image component
 const imageClass =
@@ -25,7 +37,9 @@ const AnchorSVG = `
 >
   <!-- The product's main image -->
   <Image
-    src={product.data.main.imgCard}
+    src={optimizedImage.src}
+    width={optimizedImage.attributes.width}
+    height={optimizedImage.attributes.height}
     alt={product.data.main.imgAlt}
     draggable={"false"}
     class={imageClass}

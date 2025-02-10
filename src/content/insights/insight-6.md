@@ -1,4 +1,6 @@
 ---
+id: 6
+pubDate: 2024-03-19
 title: "The Impact of Sustainable Practices"
 description: "Discover how ScrewFast is leading the charge in promoting sustainability within the construction industry"
 cardImage: "../../assets/images/dahua.jpg"

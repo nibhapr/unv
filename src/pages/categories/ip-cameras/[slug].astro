@@ -23,9 +23,7 @@ interface Product {
     description: string;
     image: string;
     features: string[];
-    specifications: {
-        [key: string]: string;
-    };
+    specifications: ProductSpecifications;
 }
 
 export async function getStaticPaths() {

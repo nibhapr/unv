@@ -1,4 +1,6 @@
 ---
+id: 2
+pubDate: 2024-03-19
 title: "4k vandal-resistant network ir fixed Dome camera"
 description: "4K Ultra HD Clarity: Experience pristine clarity like never before with 4K Ultra HD resolution. Every detail is captured in stunning clarity, ensuring that nothing escapes the watchful eye of this advanced camera"
 cardImage: "../../assets/images/insights/digi7.jpeg"

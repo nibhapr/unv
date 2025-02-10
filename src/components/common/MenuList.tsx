@@ -6,7 +6,7 @@ const MenuList = ({links}: {links: Array<MenuLink>}) => {
     className="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"
     transition={{staggerChildren: 0.07, delayChildren: 0.2}}
     >
-      {links.map(({ text, href }, idx) => (
+      {links.map(({ text }, idx) => (
         <motion.li
         key={idx}
         initial={{scale: 0.8, opacity: 0}}

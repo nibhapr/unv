@@ -43,9 +43,9 @@ const { post } = Astro.props;
           </h1>
           <div class="space-y-8">
             {
-              post.data.contents.map((content) => (
+              post.data.contents.map((content: { title: string; body: string }) => (
                 <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                  {content}
+                  {content.body}
                 </p>
               ))
             }

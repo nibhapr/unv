@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-const Feature = ({
-  icon = "../icons/temp.svg",
-  title = "Title",
-  body = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.",
-}) => {  
+
+interface FeatureProps {
+  title?: string;
+  body?: string;
+  icon?: string;
+}
+
+const Feature = ({ title, body, icon }: FeatureProps) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>

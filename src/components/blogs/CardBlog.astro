@@ -4,6 +4,7 @@ import AvatarBlog from "~/components/ui/AvatarBlog.astro";
 import { Image } from "astro:assets";
 import { formatDate } from "~/utils/utils";
 import type { CollectionEntry } from "astro:content";
+import blogImage from '../../assets/images/blogs/Uniview.avif';
 
 const { blogEntry } = Astro.props;
 
@@ -27,8 +28,8 @@ interface Props {
   >
     <Image
       class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
-      src={blogEntry.data.cardImage}
-      alt={blogEntry.data.cardImageAlt}
+      src={blogImage}
+      alt="Blog image"
       draggable={"false"}
       loading={"eager"}
       format={"avif"}
