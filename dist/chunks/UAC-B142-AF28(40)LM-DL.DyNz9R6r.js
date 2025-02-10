@@ -1,0 +1,1 @@
+async function getMod(){return import("./UAC-B142-AF28(40)LM-DL.B7KramCK.js")}const collectedLinks=[],collectedStyles=[],collectedScripts=[],defaultMod={__astroPropagation:!0,getMod:getMod,collectedLinks:collectedLinks,collectedStyles:collectedStyles,collectedScripts:collectedScripts};export{defaultMod as default};

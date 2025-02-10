@@ -1,0 +1,1 @@
+async function getMod(){return import("./TIC3612SA-F2-4F3AC-I1.B4FhZ0Hd.js")}const collectedLinks=[],collectedStyles=[],collectedScripts=[],defaultMod={__astroPropagation:!0,getMod:getMod,collectedLinks:collectedLinks,collectedStyles:collectedStyles,collectedScripts:collectedScripts};export{defaultMod as default};

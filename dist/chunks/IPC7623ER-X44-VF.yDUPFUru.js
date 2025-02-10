@@ -1,0 +1,1 @@
+async function getMod(){return import("./IPC7623ER-X44-VF.B47blKOm.js")}const collectedLinks=[],collectedStyles=[],collectedScripts=[],defaultMod={__astroPropagation:!0,getMod:getMod,collectedLinks:collectedLinks,collectedStyles:collectedStyles,collectedScripts:collectedScripts};export{defaultMod as default};

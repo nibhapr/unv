@@ -1,0 +1,1 @@
+function formatDate(t){return new Date(t).toLocaleDateString(void 0,{year:"numeric",month:"short",day:"numeric"})}function capitalize(t){return"string"!=typeof t||0===t.length?t:t.charAt(0).toUpperCase()+t.slice(1)}export{capitalize as c,formatDate as f};

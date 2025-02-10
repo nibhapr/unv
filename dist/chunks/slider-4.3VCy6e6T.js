@@ -1,0 +1,1 @@
+const id="slider-4.md",collection="slider",slug="slider-4",body="",data={id:4,slider:"../slider/4.webp",sliderAlt:"seamless Integration:"},_internal={type:"content",filePath:"D:/unv/src/content/slider/slider-4.md",rawData:void 0};export{_internal,body,collection,data,id,slug};

@@ -1,0 +1,1 @@
+async function getMod(){return import("./IPC3638SE-ADF28K-WP-I1.y8-GLuo9.js")}const collectedLinks=[],collectedStyles=[],collectedScripts=[],defaultMod={__astroPropagation:!0,getMod:getMod,collectedLinks:collectedLinks,collectedStyles:collectedStyles,collectedScripts:collectedScripts};export{defaultMod as default};

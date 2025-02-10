@@ -1,0 +1,1 @@
+async function getMod(){return import("./UAC-B145-AF28(40)LM-DL.B8nc9sJz.js")}const collectedLinks=[],collectedStyles=[],collectedScripts=[],defaultMod={__astroPropagation:!0,getMod:getMod,collectedLinks:collectedLinks,collectedStyles:collectedStyles,collectedScripts:collectedScripts};export{defaultMod as default};
