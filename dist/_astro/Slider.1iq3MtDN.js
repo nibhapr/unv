@@ -1,1 +1,0 @@
-import{S as a}from"./Slider.Dx18SOVQ.js";import"./jsx-runtime.7faW4zRM.js";import"./index.DhYZZe0J.js";import"./astro/assets-service.CScP7A7k.js";import"./proxy.Bpy8ZRIl.js";export{a as default};
