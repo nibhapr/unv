@@ -1,5 +1,5 @@
 ---
-import Hero from "~/components/Hero";
+import Hero from "~/components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import Slider from "~/components/Slider";
 import FeaturesNavs from "../components/features/FeaturesNavs.astro";
@@ -11,6 +11,7 @@ import FeatureComponents from "~/components/FeatureComponents.astro";
 import Sections from "~/components/Sections.astro";
 import Unvdigi from "~/components/Unvdigi.astro";
 import Whatsapp from "~/components/Whatsapp";
+import Feature from "~/components/features/Feature.astro";
 const title: string =
   "UNV Authorized distributor in Dubai,U.A.E";
 const description: string = "Premier Hikvision Distributor in Dubai, UAE. Explore our range of genuine products and benefit from expert support. Contact us for inquiries";
@@ -120,8 +121,8 @@ const structuredData = {
 <Layout title={title} description ={description} structuredData={structuredData}>
 <Unvdigi/> 
 <Sections>
-<Hero client:load />
-<FeaturesNavs />
+<Hero/>
+<Feature/>
 <TitleComponents title="Why Digital Link Technology?" />
 <FeatureComponents/>
 <TestimonialsSection

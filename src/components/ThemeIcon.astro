@@ -1,48 +1,97 @@
-<!-- Dark Theme Toggle Button --><!-- This button is shown when the light theme is active, and when clicked, it switches the theme to dark -->
-<button
-  type="button"
-  aria-label="Dark Theme Toggle"
-  class="hs-dark-mode group flex h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-[#fa5a15] hs-dark-mode-active:hidden dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-[#fb713b] dark:focus:outline-none"
-  data-hs-theme-click-value="dark"
->
-  <!-- The SVG displayed shows an abstract icon that represents the moon (dark theme) -->
-  <svg
-    class="h-4 w-4 flex-shrink-0"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
-  >
-  <!-- Light Theme Toggle Button -->
-  <!-- This button is hidden by default and only appears when the dark theme is active, when clicked, it switches to the light theme -->
-</button>
-<button
-  type="button"
-  aria-label="Light Theme Toggle"
-  class="hs-dark-mode group hidden h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:text-[#fa5a15] hs-dark-mode-active:flex dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-[#fb713b] dark:focus:outline-none"
-  data-hs-theme-click-value="light"
->
-  <!-- The SVG displayed shows a standard sun icon that stands for the light theme -->
-  <svg
-    class="h-4 w-4 flex-shrink-0"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    ><circle cx="12" cy="12" r="4"></circle><path d="M12 8a2 2 0 1 0 4 4"
-    ></path><path d="M12 2v2"></path><path d="M12 20v2"></path><path
-      d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"
-    ></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path
-      d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"
-    ></path></svg
-  >
-</button>
+--- 
+import { Image } from 'astro:assets'; 
+import Logo from '../assets/images/digitallogo.svg'; 
+--- 
+
+<nav class="bg-white text-gray-800 shadow-md font-sans">
+  <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+          <Image src={Logo} alt="Digital Link Technology" width="150" height="50" class="h-12 w-auto" />
+      </a>
+      
+      <!-- Navigation Links -->
+      <div class="hidden md:flex flex-1 justify-center">
+          <ul class="flex space-x-12 items-center text-4xl font-extrabold tracking-wide">
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-blue-600 transition duration-300 py-3 px-4 border-b-4 border-transparent hover:border-blue-600"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/about"
+                  class="hover:text-blue-600 transition duration-300 py-3 px-4 border-b-4 border-transparent hover:border-blue-600"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services"
+                  class="hover:text-blue-600 transition duration-300 py-3 px-4 border-b-4 border-transparent hover:border-blue-600"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  class="hover:text-blue-600 transition duration-300 py-3 px-4 border-b-4 border-transparent hover:border-blue-600"
+                  >Contact Us</a
+                >
+              </li>
+          </ul>
+      </div>
+      
+      <!-- Get Started Button -->
+      <div class="hidden md:flex">
+          <a
+              href="/contact"
+              class="ml-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-2xl px-8 py-4 rounded-lg transition duration-300 shadow-lg"
+              >Get Started</a
+          >
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <button
+          id="menu-toggle"
+          class="md:hidden focus:outline-none"
+          aria-label="Toggle navigation"
+      >
+          <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+          >
+              <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+      </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden">
+      <ul class="bg-white border-t border-gray-200 px-6 py-4 space-y-4 text-4xl font-extrabold tracking-wide">
+          <li><a href="/" class="block hover:text-blue-600 transition duration-300 py-3 px-4">Home</a></li>
+          <li><a href="/about" class="block hover:text-blue-600 transition duration-300 py-3 px-4">About</a></li>
+          <li><a href="/services" class="block hover:text-blue-600 transition duration-300 py-3 px-4">Services</a></li>
+          <li><a href="/contact" class="block hover:text-blue-600 transition duration-300 py-3 px-4">Contact Us</a></li>
+          <li><a href="/contact" class="block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold text-2xl px-8 py-4 rounded-lg transition duration-300 text-center shadow-lg">Get Started</a></li>
+      </ul>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const toggleButton = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+  });
+</script>

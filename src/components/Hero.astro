@@ -1,0 +1,163 @@
+<div id="default-carousel" class="relative w-full h-[500px]" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative h-full overflow-hidden rounded-lg">
+      <!-- Item 1 -->
+      <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0" data-carousel-item>
+        <img
+          src="https://img.freepik.com/free-vector/3d-vector-white-safety-security-video-spy-camera_107791-20921.jpg?t=st=1742204957~exp=1742208557~hmac=939fe26f079ce237cf425443cf8350926383a706c9de0ac3c04e9c4d76c14d74&w=1800"
+          class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="3D Vector Security Camera"
+        />
+      </div>
+      <!-- Item 2 -->
+      <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full" data-carousel-item>
+        <img
+          src="https://img.freepik.com/free-photo/home-security-camera_181624-58835.jpg?t=st=1742204992~exp=1742208592~hmac=79df2465fb66e6801878dd441f953e199b06e5664c506d19c1e6649c0f99e469&w=1380"
+          class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="Home Security Camera"
+        />
+      </div>
+      <!-- Item 3 -->
+      <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full" data-carousel-item>
+        <img
+          src="https://img.freepik.com/free-vector/security-cam-cctv-video-camera-street-observe-surveillance-equipment-front-side-angle-view_107791-4295.jpg?t=st=1742205055~exp=1742208655~hmac=705c1bc1d8f50dd46b12076297466c3e782beaa3ead4efadf32b873e68b8d317&w=1380"
+          class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="CCTV Security Camera"
+        />
+      </div>
+    </div>
+  
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full bg-white/50 hover:bg-white"
+        aria-current="true"
+        aria-label="Slide 1"
+        data-carousel-slide-to="0"
+      ></button>
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full bg-white/50 hover:bg-white"
+        aria-current="false"
+        aria-label="Slide 2"
+        data-carousel-slide-to="1"
+      ></button>
+      <button
+        type="button"
+        class="w-3 h-3 rounded-full bg-white/50 hover:bg-white"
+        aria-current="false"
+        aria-label="Slide 3"
+        data-carousel-slide-to="2"
+      ></button>
+    </div>
+  
+    <!-- Slider controls -->
+    <button
+      type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev
+    >
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+        <svg
+          class="w-4 h-4 text-white rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next
+    >
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+        <svg
+          class="w-4 h-4 text-white rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+  
+  <script>
+    // Carousel functionality with transitions and auto-slide
+    const carousel = document.querySelector('[data-carousel="static"]');
+    const items = carousel.querySelectorAll('[data-carousel-item]');
+    const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
+    const prevButton = carousel.querySelector('[data-carousel-prev]');
+    const nextButton = carousel.querySelector('[data-carousel-next]');
+  
+    let currentIndex = 0;
+    let autoSlideInterval;
+  
+    // Function to show the current item
+    function showItem(index) {
+      items.forEach((item, i) => {
+        (item as HTMLElement).style.transform = `translateX(${100 * (i - index)}%)`;
+      });
+      indicators.forEach((indicator, i) => {
+        indicator.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+    }
+  
+    // Function to go to the next slide
+    function goToNextSlide() {
+      currentIndex = (currentIndex + 1) % items.length;
+      showItem(currentIndex);
+    }
+  
+    // Function to go to the previous slide
+    function goToPrevSlide() {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      showItem(currentIndex);
+    }
+  
+    // Start auto-slide
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(goToNextSlide, 5000); // Change slide every 5 seconds
+    }
+  
+    // Stop auto-slide
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+  
+    // Event listeners for indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        showItem(currentIndex);
+      });
+    });
+  
+    // Event listeners for buttons
+    prevButton.addEventListener('click', () => {
+      goToPrevSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  
+    nextButton.addEventListener('click', () => {
+      goToNextSlide();
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  
+    // Show the first item initially
+    showItem(currentIndex);
+  
+    // Start auto-slide on page load
+    startAutoSlide();
+  </script>

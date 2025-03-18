@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/images/digitallogo.svg";
+---
+
+<nav class="bg-white text-gray-800 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+            <Image
+                src={Logo}
+                alt="Digital Link Technology"
+                width="120"
+                height="40"
+                class="h-10 w-auto"
+            />
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex flex-1 justify-center">
+            <ul class="flex space-x-10 text-xl font-medium items-center">
+                <li>
+                    <a
+                        href="/"
+                        class="font-medium text-gray-800 hover:text-blue-600 transition-all duration-300 py-3 px-4 border-b-2 border-transparent hover:border-blue-600"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/about"
+                        class="font-medium text-gray-800 hover:text-blue-600 transition-all duration-300 py-3 px-4 border-b-2 border-transparent hover:border-blue-600"
+                    >
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/services"
+                        class="font-medium text-gray-800 hover:text-blue-600 transition-all duration-300 py-3 px-4 border-b-2 border-transparent hover:border-blue-600"
+                    >
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/contact"
+                        class="font-medium text-gray-800 hover:text-blue-600 transition-all duration-300 py-3 px-4 border-b-2 border-transparent hover:border-blue-600"
+                    >
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Get Started Button (Right Aligned) -->
+        <div class="hidden md:flex">
+            <a
+                href="/contact"
+                class="ml-4 bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition duration-300"
+                >Get Started</a
+            >
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+            id="menu-toggle"
+            class="md:hidden focus:outline-none"
+            aria-label="Toggle navigation"
+        >
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="bg-white border-t border-gray-200 px-6 py-4 space-y-4">
+            <li>
+                <a
+                    href="/"
+                    class="block font-medium hover:text-blue-600 transition duration-300"
+                    >Home</a>
+            </li>
+            <li>
+                <a
+                    href="/about"
+                    class="block font-medium hover:text-blue-600 transition duration-300"
+                    >About</a>
+            </li>
+            <li>
+                <a
+                    href="/services"
+                    class="block font-medium hover:text-blue-600 transition duration-300"
+                    >Services</a>
+            </li>
+            <li>
+                <a
+                    href="/contact"
+                    class="block font-medium hover:text-blue-600 transition duration-300"
+                    >Contact Us</a>
+            </li>
+            <li>
+                <a
+                    href="/contact"
+                    class="block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition duration-300 text-center"
+                    >Get Started</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    // Add interactivity for mobile menu toggle
+    const toggleButton = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+</script>

@@ -1,0 +1,179 @@
+---
+import { Image } from 'astro:assets';
+import construction from '~/assets/images/digi2.jpg';
+import digiimpact from '~/assets/images/digit.jpg';
+import dashboard from '~/assets/images/dahua.jpg';
+
+const title: string = `Welcome to<span class="text-blue-500 ml-2 dark:text-yellow-400">Digital Link Technology</span>`;
+---
+
+<style>
+  /* CSS for smooth transitions */
+  .tab-content {
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Longer duration for smooth transition */
+  }
+
+  .tab-nav {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for tab navigation */
+  }
+
+  .tab-nav.active {
+    border: 2px solid #3b82f6; /* Blue border for active tab */
+    border-radius: 0.5rem; /* Rounded corners */
+    background-color: rgba(59, 130, 246, 0.1); /* Light blue background */
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .opacity-0 {
+    opacity: 0;
+  }
+
+  .translate-y-4 {
+    transform: translateY(1rem);
+  }
+</style>
+
+<section class="mx-auto max-w-[85rem] px-0 py-2 sm:px-2 lg:px-2 lg:py-2 2xl:max-w-full">
+  <div class="relative p-0 md:p-2">
+    <div class="relative z-10 lg:grid lg:grid-cols-12 lg:items-center lg:gap-2">
+      <!-- Section's heading and tab navigation -->
+      <div class="mb-10 lg:order-2 lg:col-span-6 lg:col-start-8 lg:mb-0">
+        <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl">
+          <span set:html={title} />
+        </h2>
+        <!-- Tab navigation - using data attributes to link content -->
+        <nav class="mt-5 grid gap-4 md:mt-10" aria-label="Tabs" role="tablist">
+          <!-- First Tab -->
+          <div id="tabs-with-card-item-1" class="tab-nav cursor-pointer p-4 tab rounded-lg transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800" data-tab="1">
+            <div class="flex items-start">
+              <svg
+                class="mt-2 h-6 w-6 flex-shrink-0 fill-neutral-700 hs-tab-active:fill-[#fa5a15] dark:fill-neutral-300 dark:hs-tab-active:fill-[#fb713b] md:h-7 md:w-7"
+                height="48"
+                viewBox="0 -960 960 960"
+                width="48"
+              >
+                <path d="M764-80q-6 0-11-2t-10-7L501-331q-5-5-7-10t-2-11q0-6 2-11t7-10l85-85q5-5 10-7t11-2q6 0 11 2t10 7l242 242q5 5 7 10t2 11q0 6-2 11t-7 10l-85 85q-5 5-10 7t-11 2Zm0-72 43-43-200-200-43 43 200 200ZM195-80q-6 0-11.5-2T173-89l-84-84q-5-5-7-10.5T80-195q0-6 2-11t7-10l225-225h85l38-38-175-175h-57L80-779l99-99 125 125v57l175 175 130-130-67-67 56-56H485l-18-18 128-128 18 18v113l56-56 169 169q15 15 23.5 34.5T870-600q0 20-6.5 38.5T845-528l-85-85-56 56-52-52-211 211v84L216-89q-5 5-10 7t-11 2Zm0-72 200-200v-43h-43L152-195l43 43Zm0 0-43-43 22 21 21 22Zm569 0 43-43-43 43Z"></path>
+              </svg>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold">Discover Our Range of UNV Cameras</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">At Digital Link Technology, we offer a diverse selection of UNV cameras designed to meet the demands of any surveillance environment.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Tab -->
+          <div id="tabs-with-card-item-2" class="tab-nav cursor-pointer p-4 tab rounded-lg transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800" data-tab="2">
+            <div class="flex items-start">
+              <svg
+                class="mt-2 h-6 w-6 flex-shrink-0 fill-neutral-700 hs-tab-active:fill-[#fa5a15] dark:fill-neutral-300 dark:hs-tab-active:fill-[#fb713b] md:h-7 md:w-7"
+                height="48"
+                viewBox="0 -960 960 960"
+                width="48"
+              >
+                <path d="M510-570v-270h330v270H510ZM120-450v-390h330v390H120Zm390 330v-390h330v390H510Zm-390 0v-270h330v270H120Zm60-390h210v-270H180v270Zm390 330h210v-270H570v270Zm0-450h210v-150H570v150ZM180-180h210v-150H180v150Zm210-330Zm180-120Zm0 180ZM390-330Z"></path>
+              </svg>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold">Comprehensive UNV Camera Solutions</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">Digital Link Technology provides a comprehensive suite of services to ensure your surveillance system operates at peak performance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Tab -->
+          <div id="tabs-with-card-item-3" class="tab-nav cursor-pointer p-4 tab rounded-lg transition-all duration-300 hover:bg-neutral-100 dark:hover:bg-neutral-800" data-tab="3">
+            <div class="flex items-start">
+              <svg
+                class="h-6 w-6 flex-shrink-0 text-neutral-700 hs-tab-active:text-[#fa5a15] dark:text-neutral-300 dark:hs-tab-active:text-[#fb713b] md:h-7 md:w-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819"
+                ></path>
+              </svg>
+              <div class="ml-4">
+                <h3 class="text-lg font-semibold">Stay Informed with the Latest in Surveillance Technology</h3>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">Welcome to the Digital Link Technology blog, your source for informative articles, tips, and insights on UNV cameras and surveillance technology.</p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Contents for each tab -->
+      <div class="lg:col-span-6">
+        <div class="relative h-64 sm:h-80 lg:h-full">
+          <!-- Tab Content for the First Tab -->
+          <div id="tabs-with-card-1-content" class="tab-content p-4 opacity-0 transform translate-y-4 transition-opacity transition-transform duration-2000 hidden">
+            <Image src={construction} alt="Yellow and black heavy equipment on brown grass field" />
+          </div>
+
+          <!-- Tab Content for the Second Tab -->
+          <div id="tabs-with-card-2-content" class="tab-content p-4 opacity-0 transform translate-y-4 transition-opacity transition-transform duration-2000 hidden">
+            <Image src={dashboard} alt="A screenshot or graphic representation of the intuitive dashboard" />
+          </div>
+
+          <!-- Tab Content for the Third Tab -->
+          <div id="tabs-with-card-3-content" class="tab-content p-4 opacity-0 transform translate-y-4 transition-opacity transition-transform duration-2000 hidden">
+            <Image src={digiimpact} alt="Gray metal building frame near tower crane during daytime" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Function to switch tabs and show the corresponding content
+  function switchTab(tabNumber) {
+    // Hide all content with a smooth transition
+    document.querySelectorAll('.tab-content').forEach((content) => {
+      content.classList.add('opacity-0', 'translate-y-4'); // Start transition (fade out and move down)
+    });
+
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab-nav').forEach((tab) => {
+      tab.classList.remove('active');
+    });
+
+    // Wait for the transition to end before hiding content
+    setTimeout(() => {
+      document.querySelectorAll('.tab-content').forEach((content) => {
+        content.classList.add('hidden'); // Hide content after fade-out transition
+      });
+
+      // Show the content of the clicked tab
+      const tabContent = document.getElementById(`tabs-with-card-${tabNumber}-content`);
+      tabContent.classList.remove('hidden'); // Reveal the content
+
+      // Add smooth transition delay
+      setTimeout(() => {
+        tabContent.classList.remove('opacity-0', 'translate-y-4'); // Start the transition (fade in and move up)
+      }, 50); // Small delay to allow the DOM to update
+
+      // Add active class to the clicked tab
+      document.getElementById(`tabs-with-card-item-${tabNumber}`).classList.add('active');
+    },); // Match the duration of the CSS transition (1.5 seconds)
+  }
+
+  // Activate the first tab on page load
+  window.onload = () => {
+    // Default to showing the first tab's content
+    switchTab(1);
+
+    // Set up event listeners for tabs
+    document.querySelectorAll('.tab').forEach((tab) => {
+      tab.addEventListener('click', function () {
+        const tabId = this.getAttribute('data-tab');
+        switchTab(tabId); // Call switchTab with the corresponding tab
+      });
+    });
+  };
+</script>
